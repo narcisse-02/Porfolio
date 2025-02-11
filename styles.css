@@ -5,55 +5,92 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Variables Globales */
+:root {
+  --primary-color: #0073e6; /* Bleu médical */
+  --secondary-color: #005bb5; /* Bleu plus foncé */
+  --dark-bg: #121212; /* Fond sombre */
+  --light-bg: #f9f9f9; /* Fond clair */
+  --text-light: #ffffff; /* Texte clair */
+  --text-dark: #333; /* Texte sombre */
+  --medical-green: #4CAF50; /* Vert médical */
+  --medical-blue: #2196F3; /* Bleu médical */
+  --medical-gray: #607D8B; /* Gris médical */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+
+  /* Responsive Font Sizes */
+  --font-large: clamp(1.8rem, 3vw, 2.5rem);
+  --font-medium: clamp(1.2rem, 2vw, 1.8rem);
+  --font-small: clamp(0.9rem, 1.5vw, 1.2rem);
+  --section-padding: clamp(2rem, 4vw, 4rem);
+  --card-radius: 10px;
 }
 
-/* Bouton Mode Sombre/Clair */
+/* Base Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+/* Styles pour le bouton de basculement du thème */
 #theme-toggle {
   position: fixed;
   top: 1rem;
   right: 1rem;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 2vw, 2rem); /* Taille adaptative */
   cursor: pointer;
   z-index: 1000;
-  color: #0073e6;
-  transition: color 0.3s ease;
+  transition: color var(--transition);
 }
 
-#theme-toggle:hover {
-  color: #ffcc00;
+/* Icône du mode clair */
+.light-icon {
+  display: inline-block;
+}
+
+/* Icône du mode sombre */
+.dark-icon {
+  display: none;
+}
+
+/* En mode sombre, masquez le soleil et affichez la lune */
+.dark-mode .light-icon {
+  display: none;
+}
+
+.dark-mode .dark-icon {
+  display: inline-block;
 }
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #0073e6, #005bb5);
-  color: white;
+  background: linear-gradient(135deg, var(--medical-blue), var(--medical-green));
+  color: var(--text-light);
   text-align: center;
-  padding: 2rem 0;
+  padding: var(--section-padding) 0;
 }
 
 .profile-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: clamp(1rem, 2vw, 2rem);
   flex-wrap: wrap;
 }
 
 .profile-picture img {
-  width: 150px;
-  height: 150px;
+  width: clamp(100px, 15vw, 150px);
+  height: clamp(100px, 15vw, 150px);
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
 }
 
 .profile-picture img:hover {
@@ -61,31 +98,31 @@ header {
 }
 
 .profile-info h1 {
-  font-size: 2.5rem;
+  font-size: var(--font-large);
   margin-bottom: 0.5rem;
 }
 
 .profile-info p {
-  font-size: 1.2rem;
+  font-size: var(--font-medium);
   margin-bottom: 1rem;
 }
 
 .social-links a {
-  color: white;
-  margin: 0 10px;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+  color: var(--text-light);
+  margin: 0 clamp(5px, 1vw, 10px);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  transition: color var(--transition);
 }
 
 .social-links a:hover {
-  color: #ffcc00;
+  color: var(--medical-green);
 }
 
 /* Navigation */
 nav {
-  background: #333;
-  color: white;
-  padding: 1rem 0;
+  background: var(--medical-gray);
+  color: var(--text-light);
+  padding: clamp(0.5rem, 1vw, 1rem) 0;
 }
 
 .nav-container {
@@ -94,41 +131,42 @@ nav {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 clamp(0.5rem, 1vw, 1rem);
 }
 
 #menu-toggle {
   display: none;
   background: none;
   border: none;
-  color: white;
-  font-size: 1.5rem;
+  color: var(--text-light);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   cursor: pointer;
 }
 
 #nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: clamp(0.5rem, 1vw, 1.5rem);
   list-style: none;
 }
 
 #nav-links li a {
-  color: white;
+  color: var(--text-light);
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  padding: clamp(0.3rem, 0.5vw, 0.5rem) clamp(0.5rem, 1vw, 1rem);
+  border-radius: var(--card-radius);
+  transition: background-color var(--transition);
 }
 
 #nav-links li a:hover {
-  background-color: #0073e6;
+  background-color: var(--medical-green);
+  color: var(--dark-bg);
 }
 
 /* Conteneur Principal */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--section-padding);
 }
 
 /* Sections avec Timeline */
@@ -137,7 +175,7 @@ nav {
 .interests-timeline {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: clamp(1rem, 2vw, 2rem);
   position: relative;
 }
 
@@ -150,7 +188,7 @@ nav {
   bottom: 0;
   left: 50%;
   width: 2px;
-  background: #ccc;
+  background: var(--medical-gray);
   transform: translateX(-50%);
 }
 
@@ -160,34 +198,34 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: clamp(1rem, 2vw, 2rem);
   position: relative;
 }
 
 .about-icon,
 .timeline-icon,
 .interest-icon {
-  background: #0073e6;
-  color: white;
-  width: 50px;
-  height: 50px;
+  background: var(--medical-blue);
+  color: var(--text-light);
+  width: clamp(40px, 6vw, 50px);
+  height: clamp(40px, 6vw, 50px);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  box-shadow: var(--shadow);
 }
 
 .about-content,
 .timeline-content,
 .interest-content {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: var(--text-light);
+  padding: clamp(1rem, 1.5vw, 1.5rem);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
   flex: 1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .about-content:hover,
@@ -198,21 +236,21 @@ nav {
 }
 
 /* Grilles pour Compétences et Projets */
-.skills-grid,
-.projects-grid {
+.skills-grid
+ {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(1rem, 1.5vw, 1.5rem);
+  margin-top: clamp(0.5rem, 1vw, 1rem);
 }
 
 .project,
 .skill {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--text-light);
+  padding: clamp(1rem, 1.5vw, 1.5rem);
+  border-radius: var(--card);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .project:hover,
@@ -225,94 +263,211 @@ nav {
 form input,
 form textarea {
   width: 100%;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding: clamp(0.5rem, 1vw, 1rem);
+  margin-bottom: clamp(0.5rem, 1vw, 1rem);
   border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: border-color 0.3s ease;
+  border-radius: var(--card-radius);
+  transition: border-color var(--transition);
 }
 
 form input:focus,
 form textarea:focus {
-  border-color: #0073e6;
+  border-color: var(--medical-blue);
   outline: none;
 }
 
 form button {
-  background: #0073e6;
-  color: white;
-  padding: 1rem 2rem;
+  background: var(--medical-blue);
+  color: var(--text-light);
+  padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--card-radius);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transition);
 }
 
 form button:hover {
-  background-color: #005bb5;
+  background-color: var(--medical-green);
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 1rem 0;
-  background: #333;
-  color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: var(--section-padding);
+  background: var(--medical-gray);
+  color: var(--text-light);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+/* Section CV */
+#cv {
+  background: linear-gradient(135deg, #e6f7ff, #f9f9f9);
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+#cv h2 {
+  margin-bottom: 1rem;
+  font-size: var(--font-medium);
+  color: var(--medical-blue);
+}
+
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--medical-blue);
+  color: var(--text-light);
+  padding: clamp(0.8rem, 1vw, 1.2rem) clamp(1.5rem, 2vw, 2.5rem);
+  border-radius: var(--card-radius);
+  text-decoration: none;
+  font-size: var(--font-small);
+  transition: background-color var(--transition), transform var(--transition);
+  box-shadow: var(--shadow);
+  gap: 0.5rem;
+}
+
+.cv-button i {
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+}
+
+.cv-button:hover {
+  background-color: var(--medical-green);
+  transform: scale(1.05);
+}
+
+/* Section LinkedIn */
+#linkedin {
+  background: linear-gradient(135deg, #fff3e6, #f9f9f9);
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+#linkedin h2 {
+  margin-bottom: 1rem;
+  font-size: var(--font-medium);
+  color: var(--medical-blue);
+}
+
+.projects-grid,
+.linkedin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+  gap: clamp(1rem, 1.5vw, 1.5rem);
+  margin-top: clamp(1rem, 2vw, 2rem);
+}
+
+.linkedin-post {
+  background: var(--text-light);
+  padding: clamp(1rem, 1.5vw, 1.5rem);
+  border-radius: var(--card);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.linkedin-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.linkedin-post h3 {
+  font-size: var(--font-small);
+  margin-bottom: 0.2rem;
+  color: var(--medical-blue);
+}
+
+.linkedin-post p {
+  font-size: var(--font-small);
+  color: var(--text-white);
+}
+
+.post-link {
+  display: inline-block;
+  background: var(--medical-blue);
+  color: var(--text-light);
+  padding: clamp(0.5rem, 0.8vw, 0.8rem) clamp(1rem, 1.5vw, 1.5rem);
+  border-radius: var(--card-radius);
+  text-decoration: none;
+  font-size: var(--font-small);
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.post-link:hover {
+  background-color: var(--medical-green);
+  transform: scale(1.05);
 }
 
 /* Mode Sombre */
 .dark-mode body {
-  background-color: #121212;
-  color: #ffffff;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
 }
 
 .dark-mode header {
-  background: linear-gradient(135deg, #005bb5, #003d7a);
+  background: linear-gradient(135deg, var(--medical-blue), var(--medical-green));
 }
 
 .dark-mode nav {
-  background: #1e1e1e;
-}
-
-.dark-mode nav ul li a {
-  color: #ffffff;
-}
-
-.dark-mode nav ul li a:hover {
-  background-color: #ffcc00;
-  color: #121212;
+  background: var(--medical-gray);
 }
 
 .dark-mode .project,
 .dark-mode .skill,
 .dark-mode .timeline-content,
 .dark-mode .about-content,
-.dark-mode .interest-content {
-  background: #1e1e1e;
-  color: #ffffff;
+.dark-mode .interest-content,
+.dark-mode .linkedin-post {
+  background: var(--medical-gray);
+  color: var(--text-light);
 }
 
 .dark-mode footer {
-  background: #1e1e1e;
-  color: #ffffff;
+  background: var(--medical-gray);
+  color: var(--text-light);
 }
 
-/* Classes pour les animations de révélation */
-.hidden {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+.dark-mode #cv {
+  background: linear-gradient(135deg, var(--medical-blue), var(--dark-bg));
+  color: var(--text-light);
 }
 
-.visible {
-  opacity: 1;
-  transform: translateY(0);
+.dark-mode #cv h2 {
+  color: var(--medical-green);
+}
+
+.dark-mode .cv-button {
+  background: var(--medical-green);
+  color: var(--text-light);
+}
+
+.dark-mode .cv-button:hover {
+  background-color: var(--medical-blue);
+}
+
+.dark-mode #linkedin {
+  background: linear-gradient(135deg, var(--medical-gray), var(--dark-bg));
+  color: var(--text-light);
+}
+
+.dark-mode #linkedin h2 {
+  color: var(--medical-green);
+}
+
+.dark-mode .linkedin-post h3 {
+  color: var(--medical-green);
+}
+
+.dark-mode .post-link {
+  background: var(--medical-green);
+  color: var(--text-light);
+}
+
+.dark-mode .post-link:hover {
+  background-color: var(--medical-blue);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  /* Liste Déroulante pour la Navigation */
   #menu-toggle {
     display: block;
   }
@@ -320,9 +475,9 @@ footer {
   #nav-links {
     display: none;
     flex-direction: column;
-    gap: 1rem;
-    background: #333;
-    padding: 1rem;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    background: var(--medical-gray);
+    padding: clamp(0.5rem, 1vw, 1rem);
     position: absolute;
     top: 60px;
     right: 0;
@@ -334,7 +489,6 @@ footer {
     display: flex;
   }
 
-  /* Timeline pour Petits Écrans */
   .about-timeline::before,
   .timeline::before,
   .interests-timeline::before {
@@ -359,5 +513,10 @@ footer {
   .timeline-content,
   .interest-content {
     width: calc(100% - 40px);
+  }
+
+  /* LinkedIn en une colonne sur mobile */
+  .linkedin-grid {
+    grid-template-columns: 1fr;
   }
 }

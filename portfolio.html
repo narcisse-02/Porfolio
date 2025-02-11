@@ -1,160 +1,181 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Narcisse LAYIBE YAYIBE</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <title>Portfolio - LAYIBE YAYIBE Narcisse</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Assurez-vous que ce fichier pointe vers votre CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
   <!-- Bouton Mode Sombre/Clair -->
-  <button id="theme-toggle" aria-label="Basculer entre mode sombre et clair">
-    <i class="bi bi-moon-fill"></i> <!-- Icône pour le mode sombre -->
-  </button>
+<button id="theme-toggle" aria-label="Toggle Theme">
+  <span class="light-icon">☀️</span>
+  <span class="dark-icon">🌙</span>
+</button>
 
   <!-- Header -->
-  <header id="home" aria-label="Section d'accueil">
-    <div class="container">
-      <div class="profile-header">
-        <div class="profile-picture">
-          <img src="images/photo.jpg" alt="Photo de Narcisse LAYIBE YAYIBE" aria-label="Photo de profil">
-        </div>
-        <div class="profile-info">
-          <h1>Narcisse LAYIBE YAYIBE</h1>
-          <p>Data Scientist | Aspirant Data Engineer & MLOps | Passionné de l'IA</p>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/layibe-yayibe-narcisse" target="_blank" aria-label="LinkedIn">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="https://github.com/layibe-02" target="_blank" aria-label="GitHub">
-              <i class="bi bi-github"></i>
-            </a>
-            <a href="mailto:narcisse.layibe03@gmail.com" aria-label="Email">
-              <i class="bi bi-envelope"></i>
-            </a>
-          </div>
-        </div>
+  <header>
+    <div class="profile-header">
+      <div class="profile-picture">
+        <img src="images/photo.jpg" alt="Photo de profil">
       </div>
+      <div class="profile-info">
+        <h1>LAYIBE YAYIBE Narcisse</h1>
+        <p>Data Scientist | Aspirant Data Engineer & MLOps | Passionné de l'IA</p>
+      </div>
+    </div>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/layibe-yayibe-narcisse/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/layibe-02" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
     </div>
   </header>
 
   <!-- Navigation -->
-  <nav aria-label="Barre de navigation principale">
+  <nav>
     <div class="nav-container">
-      <!-- Icône pour la liste déroulante -->
-      <button id="menu-toggle" aria-label="Menu">
-        <i class="bi bi-list"></i>
-      </button>
-      <!-- Liens de navigation -->
+      <button id="menu-toggle">☰</button>
       <ul id="nav-links">
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#about">À Propos</a></li>
-        <li><a href="#education">Éducation</a></li>
+        <li><a href="#about">Accueil</a></li>
+        <li><a href="#education">À Propos</a></li>
         <li><a href="#skills">Compétences</a></li>
-        <li><a href="#projects">Projets</a></li>
+        <li><a href="#experience">Expériences</a></li>
         <li><a href="#interests">Centres d'Intérêt</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#linkedin">LinkedIn</a></li>
+        <li><a href="#cv">CV</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-   <!-- À Propos -->
-   <section id="about" aria-label="Section à propos">
-    <div class="container">
+  <!-- Contenu Principal -->
+  <main>
+    <!-- Section À Propos -->
+    <section id="about" class="container">
       <h2>À Propos de Moi</h2>
       <div class="about-timeline">
-        <!-- Parcours Académique -->
         <div class="about-item">
-          <div class="about-icon">
-            <i class="bi bi-mortarboard-fill"></i>
-          </div>
+          <div class="about-icon">🎓</div>
           <div class="about-content">
-            <h3>Parcours</h3>
+            <h3>Parcours Académique</h3>
             <p>Actuellement en 3ᵉ année de Génie Informatique à l'Institut Ucac-Icam de Douala, je suis titulaire d'une licence en informatique spécialisée en Science des Données.</p>
           </div>
         </div>
-
-        <!-- Passion et Expertise -->
         <div class="about-item">
-          <div class="about-icon">
-            <i class="bi bi-puzzle-fill"></i>
-          </div>
+          <div class="about-icon">💡</div>
           <div class="about-content">
             <h3>Passion</h3>
             <p>Passionné par l’intelligence artificielle et l’analyse de données, j’aime exploiter les données pour résoudre des problèmes concrets et apporter des solutions innovantes.</p>
           </div>
         </div>
-
-        <!-- Objectif Professionnel -->
         <div class="about-item">
-          <div class="about-icon">
-            <i class="bi bi-bullseye"></i>
-          </div>
+          <div class="about-icon">🎯</div>
           <div class="about-content">
             <h3>Objectif</h3>
             <p>Mon objectif est d’exploiter mes compétences en science des données et intelligence artificielle pour relever des défis réels et contribuer à des projets à fort impact.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Éducation -->
-  <section id="education" aria-label="Section éducation">
-    <div class="container">
+    <!-- Section Éducation -->
+    <section id="education" class="container">
       <h2>Mon Parcours Académique</h2>
       <div class="timeline">
-        <!-- Génie Informatique -->
         <div class="timeline-item">
-          <div class="timeline-icon">
-            <i class="bi bi-mortarboard-fill"></i>
-          </div>
+          <div class="timeline-icon">📚</div>
           <div class="timeline-content">
             <h3>Génie Informatique</h3>
-            <p><strong>Institut Ucac-Icam, Douala (Cameroun)</strong></p>
-            <p><em>Septembre 2024 - À présent</em></p>
+            <p>Institut Ucac-Icam, Douala (Cameroun)</p>
+            <p>Septembre 2024 - À présent</p>
           </div>
         </div>
-
-        <!-- Licence en Informatique -->
         <div class="timeline-item">
-          <div class="timeline-icon">
-            <i class="bi bi-book-fill"></i>
-          </div>
+          <div class="timeline-icon">🎓</div>
           <div class="timeline-content">
             <h3>Licence en Informatique</h3>
-            <p><strong>Université de Yaoundé I, Yaoundé (Cameroun)</strong></p>
-            <p><em>Octobre 2021 - Juillet 2024</em></p>
+            <p>Université de Yaoundé I, Yaoundé (Cameroun)</p>
+            <p>Octobre 2021 - Juillet 2024</p>
             <p>Spécialisation : Data Science</p>
           </div>
         </div>
-
-        <!-- Baccalauréat C -->
         <div class="timeline-item">
-          <div class="timeline-icon">
-            <i class="bi bi-award-fill"></i>
-          </div>
+          <div class="timeline-icon">📜</div>
           <div class="timeline-content">
             <h3>Baccalauréat C</h3>
-            <p><strong>Complexe Scolaire Elie Tao Baydo, Pala (Tchad)</strong></p>
-            <p><em>Septembre 2020 - Août 2021</em></p>
+            <p>Complexe Scolaire Elie Tao Baydo, Pala (Tchad)</p>
+            <p>Septembre 2020 - Août 2021</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Compétences -->
-  <section id="skills" aria-label="Section compétences">
-    <div class="container">
-      <h2>Compétences Techniques</h2>
+    <!-- Section Expériences -->
+    <section id="experience" class="container">
+      <h2>Mes Expériences</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon">💼</div>
+          <div class="timeline-content">
+            <h3>Stage en Data Science / Data Analysis</h3>
+            <p>Orabank, N'Djaména (Tchad)</p>
+            <p>Février 2023 - Présent</p>
+            <p>Participation à des projets d'analyse de données et de modélisation prédictive pour améliorer les processus bancaires.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon">💻</div>
+          <div class="timeline-content">
+            <h3>Développeur Web Junior</h3>
+            <p>Startup Locale, Yaoundé (Cameroun)</p>
+            <p>Juin 2022 - Août 2022</p>
+            <p>Développement d'une application web de gestion de bibliothèque avec Django, Bootstrap, HTML, CSS et JavaScript.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Centres d'Intérêt -->
+    <section id="interests" class="container">
+      <h2>Centres d'Intérêt</h2>
+      <div class="interests-timeline">
+        <div class="interest-item">
+          <div class="interest-icon">📊</div>
+          <div class="interest-content">
+            <h3>Science des Données</h3>
+            <p>Passionné par l'analyse de données, le traitement du langage naturel (NLP) et la vision par ordinateur.</p>
+          </div>
+        </div>
+        <div class="interest-item">
+          <div class="interest-icon">🤖</div>
+          <div class="interest-content">
+            <h3>Intelligence Artificielle</h3>
+            <p>Exploration des modèles d'apprentissage automatique et profond pour résoudre des problèmes complexes.</p>
+          </div>
+        </div>
+        <div class="interest-item">
+          <div class="interest-icon">🎧</div>
+          <div class="interest-content">
+            <h3>Loisirs</h3>
+            <p>Musique, films, séries, football et lecture de livres inspirants (philosophie, mathématique et développement personnel).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="skills" class="container">
+      <h2>Mes Compétences Techniques</h2>
       <div class="skills-grid">
         <div class="skill">
           <h3>Programmation</h3>
-          <p>R (Rshiny), Python (Pandas, NumPy), Java, C++, C#</p>
+          <p>R (Rshiny), Python (Pandas, NumPy), Java, C++</p>
         </div>
         <div class="skill">
           <h3>Bases de Données</h3>
@@ -170,100 +191,111 @@
         </div>
         <div class="skill">
           <h3>Développement Web</h3>
-          <p>Django, HTML, CSS, Bootstrap</p>
+          <p>Django, HTML, CSS, JavaScript, Bootstrap</p>
         </div>
         <div class="skill">
           <h3>Autres Outils</h3>
           <p>Git, GitHub, LaTeX, Google Suite</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projets -->
-  <section id="projects" aria-label="Section projets">
-    <div class="container">
+    <!-- Section Projets -->
+    <section id="projects" class="container">
       <h2>Mes Projets</h2>
       <div class="projects-grid">
         <div class="project">
-          <h3>Gestion des Notes</h3>
-          <p>Développement d'une application pour gérer les notes des étudiants de l'Université de Yaoundé I.</p>
+          <h3>Reconnaissance des Voyelles avec MLP</h3>
+          <p>Développement d'un modèle de perceptron multicouches (MLP) capable de reconnaître avec précision les voyelles (a, e, i, o, u).</p>
         </div>
         <div class="project">
-          <h3>Gestion des Tontines</h3>
-          <p>Application de gestion des tontines au Cameroun avec Microsoft Access.</p>
+          <h3>Simulation et Minimisation d'Automates Finis Déterministes (DFA)</h3>
+          <p>Application Python pour la simulation et la minimisation d'automates finis déterministes (DFA) utilisant PyQt5 et PyGraphviz.</p>
+          <!-- <a href="https://github.com/layibe-02" target="_blank" class="project-link">Voir sur GitHub</a> -->
+        </div>
+        <div class="project">
+          <h3>Prédiction de l'Obésité</h3>
+          <p>Modèles ML pour prédire l'obésité avec Rshiny sur une base de données de 2111 enregistrements.</p>
         </div>
         <div class="project">
           <h3>Bibliothèque Web</h3>
           <p>Application web de gestion de bibliothèque avec Django, Bootstrap, HTML, CSS et JavaScript.</p>
         </div>
         <div class="project">
-          <h3>Prédiction de l'Obésité</h3>
-          <p>Modèles ML pour prédire l'obésité avec Rshiny sur une base de données de 2111 enregistrements.</p>
+          <h3>Gestion des Tontines</h3>
+          <p>Application de gestion des tontines au Cameroun avec Microsoft Access.</p>
+        </div>
+        <div class="project">
+          <h3>Gestion des Notes</h3>
+          <p>Développement d'une application pour gérer les notes des étudiants de l'Université de Yaoundé I.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Centres d'Intérêt -->
-  <section id="interests" aria-label="Section centres d'intérêt">
-    <div class="container">
-      <h2>Centres d'Intérêt</h2>
-      <div class="interests-timeline">
-        <!-- Science des Données -->
-        <div class="interest-item">
-          <div class="interest-icon">
-            <i class="bi bi-bar-chart-fill"></i>
-          </div>
-          <div class="interest-content">
-            <h3>Science des Données</h3>
-            <p>Passionné par l'analyse de données, le traitement du langage naturel (NLP) et la vision par ordinateur.</p>
-          </div>
+    <!-- Section LinkedIn -->
+    <section id="linkedin" class="container">
+      <h2>Mes Publications LinkedIn</h2>
+      <div class="linkedin-grid">
+        <div class="linkedin-post">
+          <h3>Différences entre IA générative, IA autonome et AGI</h3>
+          <p>Comprendre les distinctions clés dans le monde de l'IA.</p>
+          <a href="#" class="post-link">Lire la publication</a>
         </div>
-
-        <!-- Intelligence Artificielle -->
-        <div class="interest-item">
-          <div class="interest-icon">
-            <i class="bi bi-cpu-fill"></i>
-          </div>
-          <div class="interest-content">
-            <h3>Intelligence Artificielle</h3>
-            <p>Exploration des modèles d'apprentissage automatique et profond pour résoudre des problèmes complexes.</p>
-          </div>
+        <div class="linkedin-post">
+          <h3>Reconnaissance des Voyelles avec MLP</h3>
+          <p>Explication détaillée de mon projet de reconnaissance des voyelles latines avec un perceptron multicouches (MLP).</p>
+          <a href="#" class="post-link">Lire la publication</a>
         </div>
-
-        <!-- Loisirs -->
-        <div class="interest-item">
-          <div class="interest-icon">
-            <i class="bi bi-music-note-beamed"></i>
-          </div>
-          <div class="interest-content">
-            <h3>Loisirs</h3>
-            <p>Musique, films, séries, football et lecture de livres inspirants.</p>
-          </div>
+        <div class="linkedin-post">
+          <h3>La magie de la Data Augmentation en IA</h3>
+          <p>Un guide pratique pour améliorer vos modèles d'IA.</p>
+          <a href="#" class="post-link">Lire la publication</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" aria-label="Section contact">
-    <div class="container">
+    <!-- Section CV -->
+    <section id="cv" class="container">
+      <h2>Télécharger mon CV</h2>
+      <p>Pour plus de détails sur mon parcours académique et professionnel, vous pouvez télécharger mon CV ci-dessous :</p>
+      <a href="cv.pdf" download class="cv-button">Télécharger CV</a>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="container">
       <h2>Contactez-Moi</h2>
-      <form id="contact-form">
+      <form action="#" method="POST">
         <input type="text" placeholder="Nom" required>
         <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message" required></textarea>
+        <textarea placeholder="Message" rows="5" required></textarea>
         <button type="submit">Envoyer</button>
       </form>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer aria-label="Pied de page">
-    <p>&copy; 2024 Narcisse LAYIBE YAYIBE. Tous droits réservés.</p>
+  <footer>
+    <p>© 2024 Narcisse LAYIBE YAYIBE. Tous droits réservés.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Script pour le mode sombre/clair -->
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+    });
+  </script>
+
+  <!-- Script pour la liste déroulante -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+  
 </body>
 </html>

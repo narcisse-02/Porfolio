@@ -83,3 +83,26 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     button.textContent = 'Envoyer';
   }, 2000);
 });
+
+// Sélectionnez les éléments nécessaires
+const toggleButton = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Vérifiez si un mode est déjà défini dans le localStorage
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+  body.classList.add('dark-mode');
+}
+
+// Ajoutez un écouteur d'événements au bouton
+toggleButton.addEventListener('click', () => {
+  // Basculez la classe 'dark-mode' sur le body
+  body.classList.toggle('dark-mode');
+
+  // Sauvegardez l'état actuel dans le localStorage
+  if (body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+});
