@@ -628,3 +628,89 @@ body {
     padding: clamp(1rem, 2vw, 1.5rem);
   }
 }
+
+/* Sections avec Timeline */
+.about-timeline,
+.timeline,
+.interests-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 2rem);
+  position: relative;
+}
+
+.about-timeline::before,
+.timeline::before,
+.interests-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px; /* Alignement fixe pour les petits écrans */
+  width: 2px;
+  background: var(--medical-gray);
+  transform: none; /* Supprimer translateX(-50%) */
+}
+
+.about-item,
+.timeline-item,
+.interest-item {
+  display: flex;
+  align-items: flex-start; /* Aligner les éléments en haut */
+  gap: clamp(1rem, 2vw, 2rem);
+  position: relative;
+}
+
+.about-icon,
+.timeline-icon,
+.interest-icon {
+  background: var(--medical-blue);
+  color: var(--text-light);
+  width: clamp(40px, 6vw, 50px);
+  height: clamp(40px, 6vw, 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  box-shadow: var(--shadow);
+  position: absolute; /* Fixer l'icône à gauche */
+  left: 0; /* Positionnement à gauche */
+  top: 50%; /* Centrer verticalement */
+  transform: translateY(-50%); /* Ajustement vertical */
+}
+
+.about-content,
+.timeline-content,
+.interest-content {
+  background: var(--text-light);
+  padding: clamp(1rem, 1.5vw, 1.5rem);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  flex: 1;
+  margin-left: clamp(60px, 8vw, 70px); /* Espace pour l'icône */
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.about-content:hover,
+.timeline-content:hover,
+.interest-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-icon,
+  .timeline-icon,
+  .interest-icon {
+    position: static; /* Retirer le positionnement absolu */
+    margin-right: clamp(1rem, 2vw, 1.5rem); /* Ajouter un espace entre l'icône et le contenu */
+  }
+
+  .about-content,
+  .timeline-content,
+  .interest-content {
+    margin-left: 0; /* Supprimer l'espace réservé pour l'icône */
+  }
+}
