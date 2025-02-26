@@ -222,7 +222,7 @@ nav {
 .interest-content {
   background: var(--text-light);
   padding: clamp(1rem, 1.5vw, 1.5rem);
-  border-radius: var(--card-radius);
+  border-radius: var(--card);
   box-shadow: var(--shadow);
   flex: 1;
   transition: transform var(--transition), box-shadow var(--transition);
