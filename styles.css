@@ -561,7 +561,7 @@ footer {
 .dark-mode .linkedin-post,
 .dark-mode footer,
 .dark-mode #cv {
-  background: #444; /* Fond sombre */
+  background: #1a1a1a; /* Fond sombre */
   color: var(--text-light); /* Texte clair */
 }
 
@@ -614,7 +614,7 @@ footer {
     display: none; /* Masque les liens par défaut */
     flex-direction: column; /* Alignement vertical */
     gap: clamp(0.5rem, 1vw, 1rem); /* Espace entre les liens */
-    background: var(--medical-gray); /* Fond gris médical */
+    background: #1a1a1a; /* Fond gris foncé */
     padding: clamp(0.5rem, 1vw, 1rem); /* Espacement interne */
     position: absolute; /* Positionnement absolu */
     top: 60px; /* Distance depuis le haut */
