@@ -116,12 +116,12 @@ header {
 
 /* Informations personnelles */
 .profile-info h1 {
-  font-size: var(--font-large); /* Titre principal */
+  font-size: var(--font-medium); /* Titre principal */
   margin-bottom: 0.5rem;
 }
 
 .profile-info p {
-  font-size: var(--font-medium); /* Paragraphe */
+  font-size: var(--font-small); /* Paragraphe */
   margin-bottom: 1rem;
 }
 
@@ -287,6 +287,17 @@ nav {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
 }
 
+#about h2, #about h3, #education h2, #education h3, #experience h2, #experience h3, #interests h2, #interests h3{
+  font-size: var(--font-small); /* Taille de police adaptative */
+  margin-bottom: 1rem; /* Espacement en bas */
+  color: var(--medical-gray); /* Couleur du titre */
+}
+
+#about h2, #education h2, #experience h2, #interests h2{
+  border-bottom: 2px solid var(--medical-gray); /* Ligne horizontale */
+  padding-bottom: 0.5rem; /* Espacement entre le texte et la ligne */
+}
+
 /* ==========================================================================
    6. GRILLES POUR COMPÉTENCES ET PROJETS
    ========================================================================== */
@@ -313,6 +324,17 @@ nav {
 .skill:hover {
   transform: translateY(-5px); /* Légère translation vers le haut */
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+}
+
+#projects h2, #projects h3, #skills h2, #skills h3{
+  font-size: var(--font-small); /* Taille de police adaptative */
+  margin-bottom: 1rem; /* Espacement en bas */
+  color: var(--medical-gray); /* Couleur du titre */
+}
+
+#projects h2, #skills h2 {
+  border-bottom: 2px solid var(--medical-gray); /* Ligne horizontale */
+  padding-bottom: 0.5rem; /* Espacement entre le texte et la ligne */
 }
 
 /* ==========================================================================
@@ -384,6 +406,10 @@ footer {
   color: var(--medical-blue); /* Couleur du titre */
 }
 
+#cv p {
+  margin-bottom: 1rem; /* Espacement en bas */
+}
+
 /* Bouton de téléchargement du CV */
 .cv-button {
   display: inline-flex;
@@ -422,10 +448,16 @@ footer {
   text-align: center; /* Alignement centré */
 }
 
-#linkedin h2 {
+#linkedin h2, #linkedin h3{
   margin-bottom: 1rem; /* Espacement en bas */
   font-size: var(--font-medium); /* Taille de police adaptative */
-  color: var(--medical-blue); /* Couleur du titre */
+  color: var(--medical-gray); /* Couleur du titre */
+}
+
+#linkedin h3{
+  margin-bottom: 1rem; /* Espacement en bas */
+  font-size: var(--font-small); /* Taille de police adaptative */
+  color: var(--medical-gray); /* Couleur du titre */
 }
 
 /* Grille pour les publications LinkedIn */
@@ -453,16 +485,11 @@ footer {
 }
 
 /* Titre de la publication */
-.linkedin-post h3 {
-  font-size: var(--font-small); /* Taille de police adaptative */
-  margin-bottom: 0.2rem; /* Espacement en bas */
-  color: var(--medical-blue); /* Couleur du titre */
-}
 
 /* Contenu de la publication */
 .linkedin-post p {
-  font-size: var(--font-small); /* Taille de police adaptative */
   color: var(--text-white); /* Texte blanc */
+  margin-bottom: 1rem; /* Espacement en bas */
 }
 
 /* Lien vers la publication */
