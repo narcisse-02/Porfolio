@@ -634,27 +634,14 @@ footer {
     left: 20px; /* Déplace la ligne verticale */
   }
 
-  .about-item,
-  .timeline-item,
-  .interest-item {
-    flex-direction: column; /* Alignement vertical */
-    align-items: flex-start; /* Alignement à gauche */
-  }
-
-  .about-icon,
-  .timeline-icon,
-  .interest-icon {
-    position: absolute; /* Positionnement absolu */
-    left: 20px; /* Décalage depuis la gauche */
-  }
-
   .about-content,
   .timeline-content,
   .interest-content {
     width: calc(100% - 40px); /* Ajuste la largeur */
   }
 
-  /* Grille LinkedIn en une colonne */
+  /* Grille Projects et LinkedIn en une colonne */
+  .projects-grid,
   .linkedin-grid {
     grid-template-columns: 1fr; /* Une seule colonne */
   }
