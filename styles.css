@@ -1,65 +1,75 @@
-/* Reset */
+/* ==========================================================================
+   1. RESET ET BASE GLOBALE
+   ========================================================================== */
+
+/* Réinitialisation générale */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Assure que les dimensions incluent le padding et la bordure */
 }
 
-/* Variables Globales */
+/* Variables globales pour la personnalisation */
 :root {
-  --primary-color: #0073e6; /* Bleu médical */
+  --primary-color: #0073e6; /* Bleu médical principal */
   --secondary-color: #005bb5; /* Bleu plus foncé */
-  --dark-bg: #121212; /* Fond sombre */
-  --light-bg: #f9f9f9; /* Fond clair */
-  --text-light: #ffffff; /* Texte clair */
-  --text-dark: #333; /* Texte sombre */
-  --medical-green: #4CAF50; /* Vert médical */
-  --medical-blue: #2196F3; /* Bleu médical */
-  --medical-gray: #607D8B; /* Gris médical */
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
+  --dark-bg: #121212; /* Fond sombre pour le mode sombre */
+  --light-bg: #f9f9f9; /* Fond clair par défaut */
+  --text-light: #ffffff; /* Texte clair (blanc) */
+  --text-dark: #333; /* Texte sombre (gris foncé) */
+  --medical-green: #4CAF50; /* Vert médical pour les accents */
+  --medical-blue: #2196F3; /* Bleu médical alternatif */
+  --medical-gray: #607D8B; /* Gris médical pour les arrière-plans secondaires */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère pour les éléments */
+  --transition: all 0.3s ease; /* Transition fluide pour les animations */
 
-  /* Responsive Font Sizes */
+  /* Tailles de police adaptatives */
   --font-large: clamp(1.8rem, 3vw, 2.5rem);
   --font-medium: clamp(1.2rem, 2vw, 1.8rem);
   --font-small: clamp(0.9rem, 1.5vw, 1.2rem);
+
+  /* Espacements adaptatifs */
   --section-padding: clamp(2rem, 4vw, 4rem);
-  --card-radius: 10px;
+  --card-radius: 10px; /* Rayon des coins pour les cartes */
 }
 
-/* Base Styles */
+/* Styles de base pour le corps de la page */
 body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  background-color: var(--light-bg);
-  color: var(--text-dark);
-  transition: background-color var(--transition), color var(--transition);
+  font-family: 'Inter', sans-serif; /* Police moderne et lisible */
+  line-height: 1.6; /* Hauteur de ligne confortable */
+  background-color: var(--light-bg); /* Fond clair par défaut */
+  color: var(--text-dark); /* Texte sombre par défaut */
+  transition: background-color var(--transition), color var(--transition); /* Transition fluide pour le changement de thème */
 }
 
-/* Styles pour le bouton de basculement du thème */
+/* ==========================================================================
+   2. BOUTON DE BASCULE DU THÈME
+   ========================================================================== */
+
+/* Bouton pour basculer entre le mode clair et sombre */
 #theme-toggle {
   position: fixed;
   top: 1rem;
   right: 1rem;
   background: none;
   border: none;
-  font-size: clamp(1.5rem, 2vw, 2rem); /* Taille adaptative */
+  font-size: clamp(1.5rem, 2vw, 2rem); /* Taille adaptative pour les icônes */
   cursor: pointer;
-  z-index: 1000;
-  transition: color var(--transition);
+  z-index: 1000; /* S'assure qu'il reste au-dessus des autres éléments */
+  transition: color var(--transition); /* Transition fluide pour la couleur */
 }
 
 /* Icône du mode clair */
 .light-icon {
-  display: inline-block;
+  display: inline-block; /* Visible par défaut */
 }
 
 /* Icône du mode sombre */
 .dark-icon {
-  display: none;
+  display: none; /* Masquée par défaut */
 }
 
-/* En mode sombre, masquez le soleil et affichez la lune */
+/* En mode sombre, masquer l'icône du soleil et afficher celle de la lune */
 .dark-mode .light-icon {
   display: none;
 }
@@ -68,117 +78,155 @@ body {
   display: inline-block;
 }
 
-/* Header */
+/* ==========================================================================
+   3. HEADER
+   ========================================================================== */
+
+/* Style global pour l'en-tête */
 header {
-  background: linear-gradient(135deg, var(--medical-blue), var(--medical-green));
-  color: var(--text-light);
+  background-color: #1E3A8A; /* Bleu uniforme pour l'en-tête */
+  color: var(--text-light); /* Texte clair */
   text-align: center;
-  padding: var(--section-padding) 0;
+  padding: var(--section-padding) 0; /* Espacement vertical adaptatif */
 }
 
+/* Conteneur pour la photo de profil et les informations */
 .profile-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(1rem, 2vw, 2rem);
-  flex-wrap: wrap;
+  gap: clamp(1rem, 2vw, 2rem); /* Espace entre les éléments */
+  flex-wrap: wrap; /* Permet le retour à la ligne sur les petits écrans */
 }
 
+/* Photo de profil */
 .profile-picture img {
-  width: clamp(100px, 15vw, 150px);
-  height: clamp(100px, 15vw, 150px);
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: var(--shadow);
-  transition: transform var(--transition);
+  width: clamp(150px, 20vw, 200px); /* Taille adaptative */
+  height: clamp(150px, 20vw, 200px);
+  border-radius: 50%; /* Forme circulaire */
+  object-fit: cover; /* Ajuste l'image sans déformation */
+  box-shadow: var(--shadow); /* Ajoute une ombre légère */
+  transition: transform var(--transition); /* Animation au survol */
 }
 
+/* Effet d'agrandissement au survol */
 .profile-picture img:hover {
   transform: scale(1.1);
 }
 
+/* Informations personnelles */
 .profile-info h1 {
-  font-size: var(--font-large);
+  font-size: var(--font-large); /* Titre principal */
   margin-bottom: 0.5rem;
 }
 
 .profile-info p {
-  font-size: var(--font-medium);
+  font-size: var(--font-medium); /* Paragraphe */
   margin-bottom: 1rem;
 }
 
+/* Liens des réseaux sociaux */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 1.5vw, 15px); /* Espace entre les icônes */
+  margin-top: 1rem;
+}
+
 .social-links a {
-  color: var(--text-light);
-  margin: 0 clamp(5px, 1vw, 10px);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  transition: color var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(40px, 3vw, 50px); /* Taille adaptative */
+  height: clamp(40px, 3vw, 50px);
+  border-radius: 50%; /* Forme circulaire */
+  background: var(--medical-blue); /* Couleur de fond */
+  color: var(--text-light); /* Couleur de l'icône */
+  font-size: clamp(1.2rem, 2vw, 1.5rem); /* Taille de l'icône */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Ombre légère */
 }
 
+/* Effets au survol des icônes des réseaux sociaux */
 .social-links a:hover {
-  color: var(--medical-green);
+  transform: scale(1.1); /* Légère augmentation de taille */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+  background: var(--medical-green); /* Changement de couleur */
 }
 
-/* Navigation */
+/* ==========================================================================
+   4. NAVIGATION
+   ========================================================================== */
+
+/* Barre de navigation */
 nav {
-  background: var(--medical-gray);
-  color: var(--text-light);
-  padding: clamp(0.5rem, 1vw, 1rem) 0;
+  background: var(--medical-gray); /* Arrière-plan gris médical */
+  color: var(--text-light); /* Texte clair */
+  padding: clamp(0.5rem, 1vw, 1rem) 0; /* Espacement vertical adaptatif */
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 clamp(0.5rem, 1vw, 1rem);
+  max-width: 1200px; /* Largeur maximale centrée */
+  margin: 0 auto; /* Centrage horizontal */
+  padding: 0 clamp(0.5rem, 1vw, 1rem); /* Espacement horizontal adaptatif */
 }
 
+/* Bouton de menu pour mobile */
 #menu-toggle {
-  display: none;
+  display: none; /* Masqué par défaut */
   background: none;
   border: none;
-  color: var(--text-light);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--text-light); /* Texte clair */
+  font-size: clamp(1.2rem, 2vw, 1.5rem); /* Taille adaptative */
   cursor: pointer;
 }
 
+/* Liste des liens de navigation */
 #nav-links {
   display: flex;
-  gap: clamp(0.5rem, 1vw, 1.5rem);
-  list-style: none;
+  gap: clamp(0.5rem, 1vw, 1.5rem); /* Espace entre les liens */
+  list-style: none; /* Supprime les puces */
 }
 
 #nav-links li a {
-  color: var(--text-light);
-  text-decoration: none;
-  padding: clamp(0.3rem, 0.5vw, 0.5rem) clamp(0.5rem, 1vw, 1rem);
-  border-radius: var(--card-radius);
-  transition: background-color var(--transition);
+  color: var(--text-light); /* Texte clair */
+  text-decoration: none; /* Supprime le soulignement */
+  padding: clamp(0.3rem, 0.5vw, 0.5rem) clamp(0.5rem, 1vw, 1rem); /* Espacement autour du texte */
+  border-radius: var(--card-radius); /* Coins arrondis */
+  transition: background-color var(--transition); /* Transition fluide */
 }
 
+/* Effet au survol des liens */
 #nav-links li a:hover {
-  background-color: var(--medical-green);
-  color: var(--dark-bg);
+  background-color: var(--medical-green); /* Changement de couleur */
+  color: var(--dark-bg); /* Texte sombre */
 }
 
-/* Conteneur Principal */
+/* ==========================================================================
+   5. CONTENEUR PRINCIPAL ET SECTIONS
+   ========================================================================== */
+
+/* Conteneur principal centré */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--section-padding);
+  max-width: 1200px; /* Largeur maximale */
+  margin: 0 auto; /* Centrage horizontal */
+  padding: var(--section-padding); /* Espacement adaptatif */
 }
 
-/* Sections avec Timeline */
+/* Styles pour les sections avec timeline */
 .about-timeline,
 .timeline,
 .interests-timeline {
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 2vw, 2rem);
+  gap: clamp(1rem, 2vw, 2rem); /* Espace entre les éléments */
   position: relative;
 }
 
+/* Ligne verticale centrale pour les timelines */
 .about-timeline::before,
 .timeline::before,
 .interests-timeline::before {
@@ -187,530 +235,427 @@ nav {
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 2px;
-  background: var(--medical-gray);
-  transform: translateX(-50%);
+  width: 2px; /* Épaisseur de la ligne */
+  background: var(--medical-gray); /* Couleur de la ligne */
+  transform: translateX(-50%); /* Centrage précis */
 }
 
+/* Éléments individuels dans les timelines */
 .about-item,
 .timeline-item,
 .interest-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(1rem, 2vw, 2rem);
+  gap: clamp(1rem, 2vw, 2rem); /* Espace entre l'icône et le contenu */
   position: relative;
 }
 
+/* Icônes des timelines */
 .about-icon,
 .timeline-icon,
 .interest-icon {
-  background: var(--medical-blue);
-  color: var(--text-light);
-  width: clamp(40px, 6vw, 50px);
+  background: var(--medical-blue); /* Couleur de fond */
+  color: var(--text-light); /* Couleur de l'icône */
+  width: clamp(40px, 6vw, 50px); /* Taille adaptative */
   height: clamp(40px, 6vw, 50px);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
-  box-shadow: var(--shadow);
+  border-radius: 50%; /* Forme circulaire */
+  font-size: clamp(1rem, 1.5vw, 1.5rem); /* Taille de l'icône */
+  box-shadow: var(--shadow); /* Ombre légère */
 }
 
+/* Contenu des éléments de timeline */
 .about-content,
 .timeline-content,
 .interest-content {
-  background: var(--text-light);
-  padding: clamp(1rem, 1.5vw, 1.5rem);
-  border-radius: var(--card-radius);
-  box-shadow: var(--shadow);
-  flex: 1;
-  transition: transform var(--transition), box-shadow var(--transition);
+  background: var(--text-light); /* Fond clair */
+  padding: clamp(1rem, 1.5vw, 1.5rem); /* Espacement interne */
+  border-radius: var(--card); /* Coins non arrondis */
+  box-shadow: var(--shadow); /* Ombre légère */
+  flex: 1; /* Remplit l'espace disponible */
+  transition: transform var(--transition), box-shadow var(--transition); /* Transition fluide */
 }
 
+/* Effet au survol du contenu */
 .about-content:hover,
 .timeline-content:hover,
 .interest-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Légère translation vers le haut */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
 }
 
-/* Grilles pour Compétences et Projets */
-.skills-grid
- {
+/* ==========================================================================
+   6. GRILLES POUR COMPÉTENCES ET PROJETS
+   ========================================================================== */
+
+/* Grille pour les compétences et projets */
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: clamp(1rem, 1.5vw, 1.5rem);
-  margin-top: clamp(0.5rem, 1vw, 1rem);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colonnes adaptatives */
+  gap: clamp(1rem, 1.5vw, 1.5rem); /* Espace entre les éléments */
+  margin-top: clamp(0.5rem, 1vw, 1rem); /* Espacement en haut */
 }
 
 .project,
 .skill {
-  background: var(--text-light);
-  padding: clamp(1rem, 1.5vw, 1.5rem);
-  border-radius: var(--card);
-  box-shadow: var(--shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
+  background: var(--text-light); /* Fond clair */
+  padding: clamp(1rem, 1.5vw, 1.5rem); /* Espacement interne */
+  border-radius: var(--card); /* Coins npn arrondis */
+  box-shadow: var(--shadow); /* Ombre légère */
+  transition: transform var(--transition), box-shadow var(--transition); /* Transition fluide */
 }
 
+/* Effet au survol des compétences et projets */
 .project:hover,
 .skill:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Légère translation vers le haut */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
 }
 
-/* Formulaire de Contact */
+/* ==========================================================================
+   7. FORMULAIRE DE CONTACT
+   ========================================================================== */
+
+/* Champs de saisie et zone de texte */
 form input,
 form textarea {
-  width: 100%;
-  padding: clamp(0.5rem, 1vw, 1rem);
-  margin-bottom: clamp(0.5rem, 1vw, 1rem);
-  border: 1px solid #ccc;
-  border-radius: var(--card-radius);
-  transition: border-color var(--transition);
+  width: 100%; /* Remplit la largeur disponible */
+  padding: clamp(0.5rem, 1vw, 1rem); /* Espacement interne adaptatif */
+  margin-bottom: clamp(0.5rem, 1vw, 1rem); /* Espacement en bas */
+  border: 1px solid #ccc; /* Bordure légère */
+  border-radius: var(--card-radius); /* Coins arrondis */
+  transition: border-color var(--transition); /* Transition fluide */
 }
 
+/* Effet au focus des champs */
 form input:focus,
 form textarea:focus {
-  border-color: var(--medical-blue);
-  outline: none;
+  border-color: var(--medical-blue); /* Changement de couleur */
+  outline: none; /* Supprime le contour par défaut */
 }
 
+/* Boutons du formulaire */
+.cv-button,
 form button {
-  background: var(--medical-blue);
-  color: var(--text-light);
-  padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
-  border: none;
-  border-radius: var(--card-radius);
-  cursor: pointer;
-  transition: background-color var(--transition);
+  background: var(--medical-blue); /* Couleur de fond */
+  color: var(--text-light); /* Texte clair */
+  padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem); /* Espacement interne adaptatif */
+  border: none; /* Supprime la bordure */
+  border-radius: var(--card-radius); /* Coins arrondis */
+  cursor: pointer; /* Curseur de pointeur */
+  transition: background-color var(--transition); /* Transition fluide */
 }
 
+/* Effet au survol des boutons */
 form button:hover {
-  background-color: var(--medical-green);
+  background-color: var(--medical-green); /* Changement de couleur */
 }
 
-/* Footer */
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+
+/* Pied de page */
 footer {
-  text-align: center;
-  padding: var(--section-padding);
-  background: var(--medical-gray);
-  color: var(--text-light);
-  transition: background-color var(--transition), color var(--transition);
+  text-align: center; /* Alignement centré */
+  padding: var(--section-padding); /* Espacement adaptatif */
+  background: var(--medical-gray); /* Arrière-plan gris médical */
+  color: var(--text-light); /* Texte clair */
+  transition: background-color var(--transition), color var(--transition); /* Transition fluide */
 }
+
+/* ==========================================================================
+   9. SECTION CV
+   ========================================================================== */
 
 /* Section CV */
 #cv {
-  background: linear-gradient(135deg, #e6f7ff, #f9f9f9);
-  padding: var(--section-padding);
-  text-align: center;
+  background: linear-gradient(135deg, #e6f7ff, #f9f9f9); /* Dégradé doux */
+  padding: var(--section-padding); /* Espacement adaptatif */
+  text-align: center; /* Alignement centré */
 }
 
 #cv h2 {
-  margin-bottom: 1rem;
-  font-size: var(--font-medium);
-  color: var(--medical-blue);
+  margin-bottom: 1rem; /* Espacement en bas */
+  font-size: var(--font-medium); /* Taille de police adaptative */
+  color: var(--medical-blue); /* Couleur du titre */
 }
 
+/* Bouton de téléchargement du CV */
 .cv-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--medical-blue);
-  color: var(--text-light);
-  padding: clamp(0.8rem, 1vw, 1.2rem) clamp(1.5rem, 2vw, 2.5rem);
-  border-radius: var(--card-radius);
-  text-decoration: none;
-  font-size: var(--font-small);
-  transition: background-color var(--transition), transform var(--transition);
-  box-shadow: var(--shadow);
-  gap: 0.5rem;
+  background: var(--medical-blue); /* Couleur de fond */
+  color: var(--text-light); /* Texte clair */
+  padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem); /* Espacement interne adaptatif */
+  border-radius: var(--card-radius); /* Coins arrondis */
+  text-decoration: none; /* Supprime le soulignement */
+  font-size: var(--font-small); /* Taille de police adaptative */
+  transition: background-color var(--transition), transform var(--transition); /* Transition fluide */
+  box-shadow: var(--shadow); /* Ombre légère */
+  gap: 0.5rem; /* Espace entre l'icône et le texte */
 }
 
+/* Icône du bouton CV */
 .cv-button i {
-  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem); /* Taille adaptative */
 }
 
+/* Effet au survol du bouton CV */
 .cv-button:hover {
-  background-color: var(--medical-green);
-  transform: scale(1.05);
+  background-color: var(--medical-green); /* Changement de couleur */
+  transform: scale(1.05); /* Légère augmentation de taille */
 }
+
+/* ==========================================================================
+   10. SECTION LINKEDIN
+   ========================================================================== */
 
 /* Section LinkedIn */
 #linkedin {
-  background: linear-gradient(135deg, #fff3e6, #f9f9f9);
-  padding: var(--section-padding);
-  text-align: center;
+  background: linear-gradient(135deg, #fff3e6, #f9f9f9); /* Dégradé doux */
+  padding: var(--section-padding); /* Espacement adaptatif */
+  text-align: center; /* Alignement centré */
 }
 
 #linkedin h2 {
-  margin-bottom: 1rem;
-  font-size: var(--font-medium);
-  color: var(--medical-blue);
+  margin-bottom: 1rem; /* Espacement en bas */
+  font-size: var(--font-medium); /* Taille de police adaptative */
+  color: var(--medical-blue); /* Couleur du titre */
 }
 
+/* Grille pour les publications LinkedIn */
 .projects-grid,
 .linkedin-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-  gap: clamp(1rem, 1.5vw, 1.5rem);
-  margin-top: clamp(1rem, 2vw, 2rem);
+  gap: clamp(1rem, 1.5vw, 1.5rem); /* Espace entre les éléments */
+  margin-top: clamp(1rem, 2vw, 2rem); /* Espacement en haut */
 }
 
+/* Publication LinkedIn */
 .linkedin-post {
-  background: var(--text-light);
-  padding: clamp(1rem, 1.5vw, 1.5rem);
-  border-radius: var(--card);
-  box-shadow: var(--shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
+  background: var(--text-light); /* Fond clair */
+  padding: clamp(1rem, 1.5vw, 1.5rem); /* Espacement interne */
+  border-radius: var(--card); /* Coins non arrondis */
+  box-shadow: var(--shadow); /* Ombre légère */
+  transition: transform var(--transition), box-shadow var(--transition); /* Transition fluide */
 }
 
+/* Effet au survol des publications */
 .linkedin-post:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Légère translation vers le haut */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
 }
 
+/* Titre de la publication */
 .linkedin-post h3 {
-  font-size: var(--font-small);
-  margin-bottom: 0.2rem;
-  color: var(--medical-blue);
+  font-size: var(--font-small); /* Taille de police adaptative */
+  margin-bottom: 0.2rem; /* Espacement en bas */
+  color: var(--medical-blue); /* Couleur du titre */
 }
 
+/* Contenu de la publication */
 .linkedin-post p {
-  font-size: var(--font-small);
-  color: var(--text-white);
+  font-size: var(--font-small); /* Taille de police adaptative */
+  color: var(--text-white); /* Texte blanc */
 }
 
+/* Lien vers la publication */
 .post-link {
   display: inline-block;
-  background: var(--medical-blue);
-  color: var(--text-light);
-  padding: clamp(0.5rem, 0.8vw, 0.8rem) clamp(1rem, 1.5vw, 1.5rem);
-  border-radius: var(--card-radius);
-  text-decoration: none;
-  font-size: var(--font-small);
-  transition: background-color var(--transition), transform var(--transition);
+  background: var(--medical-blue); /* Couleur de fond */
+  color: var(--text-light); /* Texte clair */
+  padding: clamp(0.5rem, 0.8vw, 0.8rem) clamp(1rem, 1.5vw, 1.5rem); /* Espacement interne adaptatif */
+  border-radius: var(--card-radius); /* Coins arrondis */
+  text-decoration: none; /* Supprime le soulignement */
+  font-size: var(--font-small); /* Taille de police adaptative */
+  transition: background-color var(--transition), transform var(--transition); /* Transition fluide */
 }
 
+/* Effet au survol du lien */
 .post-link:hover {
-  background-color: var(--medical-green);
-  transform: scale(1.05);
+  background-color: var(--medical-green); /* Changement de couleur */
+  transform: scale(1.05); /* Légère augmentation de taille */
 }
 
-/* Mode Sombre */
-.dark-mode body {
-  background-color: var(--dark-bg);
-  color: var(--text-light);
-}
+/* ==========================================================================
+   11. MODE SOMBRE
+   ========================================================================== */
 
+/* Modifications pour le mode sombre */
 .dark-mode header {
-  background: linear-gradient(135deg, var(--medical-blue), var(--medical-green));
+  background-color: #444; /* Fond sombre */
+  color: #ffffff; /* Texte clair */
+}
+
+.dark-mode main {
+  background-color: #000000; /* Fond noir */
+  color: #ffffff; /* Texte clair */
 }
 
 .dark-mode nav {
-  background: var(--medical-gray);
+  background: #1a1a1a; /* Fond gris foncé */
 }
 
+/* Icônes des réseaux sociaux en mode sombre */
+.dark-mode .social-links a {
+  background: var(--dark-bg); /* Fond sombre */
+  color: var(--text-light); /* Icônes claires */
+}
+
+.dark-mode .social-links a:hover {
+  background: var(--medical-green); /* Changement de couleur */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée */
+}
+
+/* Icônes des timelines en mode sombre */
+.dark-mode .about-icon,
+.dark-mode .timeline-icon,
+.dark-mode .interest-icon {
+  background: #F0F0F0; /* Fond clair */
+  color: var(--highlight-color); /* Icônes accentuées */
+}
+
+/* Effet au survol des icônes en mode sombre */
+.dark-mode .about-icon:hover,
+.dark-mode .timeline-icon:hover,
+.dark-mode .interest-icon:hover {
+  background: var(--medical-green); /* Changement de couleur */
+  color: var(--text-light); /* Icônes claires */
+}
+
+/* Champs de formulaire en mode sombre */
+.dark-mode form input,
+.dark-mode form textarea {
+  background: #222; /* Fond sombre */
+  color: #ffffff; /* Texte clair */
+  border: 1px solid #444; /* Bordure légère */
+}
+
+.dark-mode form input:focus,
+.dark-mode form textarea:focus {
+  border-color: var(--medical-gray); /* Changement de couleur */
+}
+
+/* Boutons en mode sombre */
+.dark-mode button {
+  background: var(--medical-gray); /* Fond bleu */
+  color: #ffffff; /* Texte clair */
+}
+
+.dark-mode button:hover {
+  background: var(--medical-green); /* Changement de couleur */
+}
+
+/* Éléments de contenu en mode sombre */
 .dark-mode .project,
 .dark-mode .skill,
 .dark-mode .timeline-content,
 .dark-mode .about-content,
 .dark-mode .interest-content,
-.dark-mode .linkedin-post {
-  background: var(--medical-gray);
-  color: var(--text-light);
-}
-
-.dark-mode footer {
-  background: var(--medical-gray);
-  color: var(--text-light);
-}
-
+.dark-mode .linkedin-post,
+.dark-mode footer,
 .dark-mode #cv {
-  background: linear-gradient(135deg, var(--medical-blue), var(--dark-bg));
-  color: var(--text-light);
+  background: #444; /* Fond sombre */
+  color: var(--text-light); /* Texte clair */
 }
 
 .dark-mode #cv h2 {
-  color: var(--medical-green);
+  color: var(--medical-gray); /* Titre vert */
 }
 
 .dark-mode .cv-button {
-  background: var(--medical-green);
-  color: var(--text-light);
+  background: var(--medical-gray); /* Fond vert */
+  color: var(--text-light); /* Texte clair */
 }
 
 .dark-mode .cv-button:hover {
-  background-color: var(--medical-blue);
+  background-color: var(--medical-green); /* Changement de couleur */
 }
 
 .dark-mode #linkedin {
-  background: linear-gradient(135deg, var(--medical-gray), var(--dark-bg));
-  color: var(--text-light);
+  background: linear-gradient(135deg, var(--medical-gray), var(--dark-bg)); /* Dégradé sombre */
+  color: var(--text-light); /* Texte clair */
 }
 
 .dark-mode #linkedin h2 {
-  color: var(--medical-green);
+  color: var(--dark-bg); /* Titre vert */
 }
 
 .dark-mode .linkedin-post h3 {
-  color: var(--medical-green);
+  color: var(--medical-gray); /* Titre vert */
 }
 
 .dark-mode .post-link {
-  background: var(--medical-green);
-  color: var(--text-light);
+  background: var(--medical-gray); /* Fond vert */
+  color: var(--text-light); /* Texte clair */
 }
 
 .dark-mode .post-link:hover {
-  background-color: var(--medical-blue);
+  background-color: var(--medical-green); /* Changement de couleur */
 }
 
-/* Responsive Design */
+/* ==========================================================================
+   12. RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Styles pour les écrans de petite taille */
 @media (max-width: 768px) {
   #menu-toggle {
-    display: block;
+    display: block; /* Affiche le bouton de menu */
   }
 
   #nav-links {
-    display: none;
-    flex-direction: column;
-    gap: clamp(0.5rem, 1vw, 1rem);
-    background: var(--medical-gray);
-    padding: clamp(0.5rem, 1vw, 1rem);
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    z-index: 1000;
+    display: none; /* Masque les liens par défaut */
+    flex-direction: column; /* Alignement vertical */
+    gap: clamp(0.5rem, 1vw, 1rem); /* Espace entre les liens */
+    background: var(--medical-gray); /* Fond gris médical */
+    padding: clamp(0.5rem, 1vw, 1rem); /* Espacement interne */
+    position: absolute; /* Positionnement absolu */
+    top: 60px; /* Distance depuis le haut */
+    right: 0; /* Alignement à droite */
+    width: 100%; /* Remplit la largeur */
+    z-index: 1000; /* S'assure qu'il reste au-dessus */
   }
 
   #nav-links.active {
-    display: flex;
+    display: flex; /* Affiche les liens lorsque le menu est actif */
   }
 
+  /* Ajustements pour les timelines */
   .about-timeline::before,
   .timeline::before,
   .interests-timeline::before {
-    left: 20px;
+    left: 20px; /* Déplace la ligne verticale */
   }
 
   .about-item,
   .timeline-item,
   .interest-item {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Alignement vertical */
+    align-items: flex-start; /* Alignement à gauche */
   }
 
   .about-icon,
   .timeline-icon,
   .interest-icon {
-    position: absolute;
-    left: 20px;
+    position: absolute; /* Positionnement absolu */
+    left: 20px; /* Décalage depuis la gauche */
   }
 
   .about-content,
   .timeline-content,
   .interest-content {
-    width: calc(100% - 40px);
+    width: calc(100% - 40px); /* Ajuste la largeur */
   }
 
-  /* LinkedIn en une colonne sur mobile */
+  /* Grille LinkedIn en une colonne */
   .linkedin-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Variables Globales */
-:root {
-  --primary-color: #0073e6; /* Bleu médical */
-  --secondary-color: #005bb5; /* Bleu plus foncé */
-  --dark-bg: #121212; /* Fond sombre */
-  --light-bg: #f9f9f9; /* Fond clair */
-  --text-light: #ffffff; /* Texte clair */
-  --text-dark: #333; /* Texte sombre */
-  --medical-green: #4CAF50; /* Vert médical */
-  --medical-blue: #2196F3; /* Bleu médical */
-  --medical-gray: #607D8B; /* Gris médical */
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
-
-  /* Responsive Font Sizes */
-  --font-large: clamp(1.8rem, 3vw, 2.5rem);
-  --font-medium: clamp(1.2rem, 2vw, 1.8rem);
-  --font-small: clamp(0.9rem, 1.5vw, 1.2rem);
-  --section-padding: clamp(2rem, 4vw, 4rem);
-  --card-radius: 10px;
-}
-
-/* Base Styles */
-body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  background-color: var(--light-bg);
-  color: var(--text-dark);
-  transition: background-color var(--transition), color var(--transition);
-}
-
-/* Grilles pour Compétences, Projets et LinkedIn */
-.skills-grid,
-.projects-grid,
-.linkedin-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: clamp(1rem, 1.5vw, 1.5rem);
-  margin-top: clamp(1rem, 2vw, 2rem);
-}
-
-.project,
-.skill,
-.linkedin-post {
-  background: var(--text-light);
-  padding: clamp(1rem, 1.5vw, 1.5rem);
-  border-radius: var(--card-radius);
-  box-shadow: var(--shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.project:hover,
-.skill:hover,
-.linkedin-post:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Styles spécifiques pour les posts LinkedIn */
-.linkedin-post h3 {
-  font-size: var(--font-small);
-  margin-bottom: 0.2rem;
-  color: var(--medical-blue);
-}
-
-.linkedin-post p {
-  font-size: var(--font-small);
-  color: var(--text-dark);
-}
-
-.post-link {
-  display: inline-block;
-  background: var(--medical-blue);
-  color: var(--text-light);
-  padding: clamp(0.5rem, 0.8vw, 0.8rem) clamp(1rem, 1.5vw, 1.5rem);
-  border-radius: var(--card-radius);
-  text-decoration: none;
-  font-size: var(--font-small);
-  transition: background-color var(--transition), transform var(--transition);
-}
-
-.post-link:hover {
-  background-color: var(--medical-green);
-  transform: scale(1.05);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .skills-grid,
-  .projects-grid,
-  .linkedin-grid {
-    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-  }
-
-  .project,
-  .skill,
-  .linkedin-post {
-    padding: clamp(1rem, 2vw, 1.5rem);
-  }
-}
-
-/* Sections avec Timeline */
-.about-timeline,
-.timeline,
-.interests-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1rem, 2vw, 2rem);
-  position: relative;
-}
-
-.about-timeline::before,
-.timeline::before,
-.interests-timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 20px; /* Alignement fixe pour les petits écrans */
-  width: 2px;
-  background: var(--medical-gray);
-  transform: none; /* Supprimer translateX(-50%) */
-}
-
-.about-item,
-.timeline-item,
-.interest-item {
-  display: flex;
-  align-items: flex-start; /* Aligner les éléments en haut */
-  gap: clamp(1rem, 2vw, 2rem);
-  position: relative;
-}
-
-.about-icon,
-.timeline-icon,
-.interest-icon {
-  background: var(--medical-blue);
-  color: var(--text-light);
-  width: clamp(40px, 6vw, 50px);
-  height: clamp(40px, 6vw, 50px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
-  box-shadow: var(--shadow);
-  position: absolute; /* Fixer l'icône à gauche */
-  left: 0; /* Positionnement à gauche */
-  top: 50%; /* Centrer verticalement */
-  transform: translateY(-50%); /* Ajustement vertical */
-}
-
-.about-content,
-.timeline-content,
-.interest-content {
-  background: var(--text-light);
-  padding: clamp(1rem, 1.5vw, 1.5rem);
-  border-radius: var(--card-radius);
-  box-shadow: var(--shadow);
-  flex: 1;
-  margin-left: clamp(60px, 8vw, 70px); /* Espace pour l'icône */
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.about-content:hover,
-.timeline-content:hover,
-.interest-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .about-icon,
-  .timeline-icon,
-  .interest-icon {
-    position: static; /* Retirer le positionnement absolu */
-    margin-right: clamp(1rem, 2vw, 1.5rem); /* Ajouter un espace entre l'icône et le contenu */
-  }
-
-  .about-content,
-  .timeline-content,
-  .interest-content {
-    margin-left: 0; /* Supprimer l'espace réservé pour l'icône */
+    grid-template-columns: 1fr; /* Une seule colonne */
   }
 }
