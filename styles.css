@@ -561,7 +561,7 @@ footer {
 .dark-mode .linkedin-post,
 .dark-mode footer,
 .dark-mode #cv {
-  background: #1a1a1a; /* Fond sombre */
+  background: #222; /* Fond sombre */
   color: var(--text-light); /* Texte clair */
 }
 
@@ -579,12 +579,12 @@ footer {
 }
 
 .dark-mode #linkedin {
-  background: linear-gradient(135deg, var(--medical-gray), var(--dark-bg)); /* Dégradé sombre */
+  background: #444; /* Fond gris */
   color: var(--text-light); /* Texte clair */
 }
 
 .dark-mode #linkedin h2 {
-  color: var(--dark-bg); /* Titre vert */
+  color: var(--medical-gray); /* Titre vert */
 }
 
 .dark-mode .linkedin-post h3 {
