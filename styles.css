@@ -287,14 +287,17 @@ nav {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
 }
 
-#about h2, #about h3, #education h2, #education h3, #experience h2, #experience h3, #interests h2, #interests h3{
+#about h3, #education h3, #experience h3, #interests h3{
   font-size: var(--font-small); /* Taille de police adaptative */
   margin-bottom: 1rem; /* Espacement en bas */
   color: var(--medical-gray); /* Couleur du titre */
 }
 
 #about h2, #education h2, #experience h2, #interests h2{
+  margin-bottom: 1rem; /* Espacement en bas */
+  font-size: var(--font-medium); /* Taille de police adaptative */
   border-bottom: 2px solid var(--medical-gray); /* Ligne horizontale */
+  color: var(--medical-gray); /* Couleur du titre */
   padding-bottom: 0.5rem; /* Espacement entre le texte et la ligne */
 }
 
@@ -326,15 +329,18 @@ nav {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
 }
 
-#projects h2, #projects h3, #skills h2, #skills h3{
-  font-size: var(--font-small); /* Taille de police adaptative */
+#projects h2, #skills h2 {
   margin-bottom: 1rem; /* Espacement en bas */
+  font-size: var(--font-medium); /* Taille de police adaptative */
+  border-bottom: 2px solid var(--medical-gray); /* Ligne horizontale */
   color: var(--medical-gray); /* Couleur du titre */
+  padding-bottom: 0.5rem; /* Espacement entre le texte et la ligne */
 }
 
-#projects h2, #skills h2 {
-  border-bottom: 2px solid var(--medical-gray); /* Ligne horizontale */
-  padding-bottom: 0.5rem; /* Espacement entre le texte et la ligne */
+#projects h3, #skills h3 {
+  margin-bottom: 1rem; /* Espacement en bas */
+  font-size: var(--font-small); /* Taille de police adaptative */
+  color: var(--medical-gray); /* Couleur du titre */
 }
 
 /* ==========================================================================
