@@ -295,7 +295,7 @@ nav {
 
 #about h2, #education h2, #experience h2, #interests h2{
   margin-bottom: 1rem; /* Espacement en bas */
-  /*font-size: var(--font-medium); /* Taille de police adaptative */
+  font-size: var(--font-medium); /* Taille de police adaptative */
   border-bottom: 2px solid var(--medical-gray); /* Ligne horizontale */
   color: var(--medical-gray); /* Couleur du titre */
   padding-bottom: 0.5rem; /* Espacement entre le texte et la ligne */
@@ -332,6 +332,7 @@ nav {
 
 #projects h2, #skills h2 {
   border-bottom: 2px solid var(--medical-gray); /* Ligne horizontale */
+  font-size: var(--font-medium); /* Taille de police adaptative */
   color: var(--medical-gray); /* Couleur du titre */
   padding-bottom: 0.5rem; /* Espacement entre le texte et la ligne */
 }
@@ -384,6 +385,7 @@ form button:hover {
 #contact h2 {
   text-align: center;
   color: var(--medical-gray); /* Couleur du titre */
+  font-size: var(--font-medium); /* Taille de police adaptative */
 }
 
 /* ==========================================================================
@@ -412,7 +414,7 @@ footer {
 
 #cv h2 {
   margin-bottom: 1rem; /* Espacement en bas */
-  /*font-size: var(--font-medium); /* Taille de police adaptative */
+  font-size: var(--font-medium); /* Taille de police adaptative */
   color: var(--medical-gray); /* Couleur du titre */
 }
 
@@ -460,7 +462,7 @@ footer {
 
 #linkedin h2, #linkedin h3{
   margin-bottom: 1rem; /* Espacement en bas */
-  /*font-size: var(--font-medium); /* Taille de police adaptative */
+  font-size: var(--font-medium); /* Taille de police adaptative */
   color: var(--medical-gray); /* Couleur du titre */
 }
 
