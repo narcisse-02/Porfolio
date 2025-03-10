@@ -293,12 +293,21 @@ nav {
   color: var(--medical-gray); /* Couleur du titre */
 }
 
-#about h2, #education h2, #experience h2, #interests h2{
+#about h2, 
+#education h2, 
+#experience h2, 
+#interests h2{
   margin-bottom: 1rem; /* Espacement en bas */
   font-size: var(--font-medium); /* Taille de police adaptative */
   border-bottom: 2px solid var(--medical-gray); /* Ligne horizontale */
   color: var(--medical-gray); /* Couleur du titre */
   padding-bottom: 0.5rem; /* Espacement entre le texte et la ligne */
+}
+
+#about-content p,
+#timeline-content p,
+#interest-content p {
+  font-size: var(--font-small); /* Taille de police adaptative */
 }
 
 /* ==========================================================================
@@ -330,17 +339,24 @@ nav {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
 }
 
-#projects h2, #skills h2 {
+#projects h2, 
+#skills h2 {
   border-bottom: 2px solid var(--medical-gray); /* Ligne horizontale */
   font-size: var(--font-medium); /* Taille de police adaptative */
   color: var(--medical-gray); /* Couleur du titre */
   padding-bottom: 0.5rem; /* Espacement entre le texte et la ligne */
 }
 
-#projects h3, #skills h3 {
+.project h3, 
+.skill h3 {
   margin-bottom: 1rem; /* Espacement en bas */
   font-size: var(--font-small); /* Taille de police adaptative */
   color: var(--medical-gray); /* Couleur du titre */
+}
+
+#skills-grid #skill p,
+#projects-grid #project p {
+  font-size: var(--font-small); /* Taille de police adaptative */
 }
 
 /* ==========================================================================
@@ -401,6 +417,10 @@ footer {
   transition: background-color var(--transition), color var(--transition); /* Transition fluide */
 }
 
+footer p {
+  font-size: var(--font-small); /* Taille de police adaptative */
+}
+
 /* ==========================================================================
    9. SECTION CV
    ========================================================================== */
@@ -427,7 +447,7 @@ footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--medical-blue); /* Couleur de fond */
+  background: var(--medical-gray); /* Couleur de fond */
   color: var(--text-light); /* Texte clair */
   padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem); /* Espacement interne adaptatif */
   border-radius: var(--card-radius); /* Coins arrondis */
@@ -436,6 +456,10 @@ footer {
   transition: background-color var(--transition), transform var(--transition); /* Transition fluide */
   box-shadow: var(--shadow); /* Ombre légère */
   gap: 0.5rem; /* Espace entre l'icône et le texte */
+}
+
+#cv p {
+  font-size: var(--font-small); /* Taille de police adaptative */
 }
 
 /* Icône du bouton CV */
@@ -458,12 +482,13 @@ footer {
   background:var(--medical-gray); /* #fff3e6;  Dégradé doux */
   padding: var(--section-padding); /* Espacement adaptatif */
   text-align: center; /* Alignement centré */
+  border-radius: var(--card-radius); /* Coins non arrondis */
 }
 
 #linkedin h2 {
   margin-bottom: 1rem; /* Espacement en bas */
   font-size: var(--font-medium); /* Taille de police adaptative */
-  color: var(--medical-blue); /* Couleur du titre */
+  color: var(--light-bg); /* Couleur du titre */
 }
 
 #linkedin h3{
@@ -502,12 +527,13 @@ footer {
 .linkedin-post p {
   color: var(--text-white); /* Texte blanc */
   margin-bottom: 1rem; /* Espacement en bas */
+  font-size: var(--font-small); /* Taille de police adaptative */
 }
 
 /* Lien vers la publication */
 .post-link {
   display: inline-block;
-  background: var(--medical-blue); /* Couleur de fond */
+  background: var(--medical-gray); /* Couleur de fond */
   color: var(--text-light); /* Texte clair */
   padding: clamp(0.5rem, 0.8vw, 0.8rem) clamp(1rem, 1.5vw, 1.5rem); /* Espacement interne adaptatif */
   border-radius: var(--card-radius); /* Coins arrondis */
