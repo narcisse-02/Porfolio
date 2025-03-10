@@ -455,15 +455,15 @@ footer {
 
 /* Section LinkedIn */
 #linkedin {
-  background: #fff3e6; /* Dégradé doux */
+  background:var(--medical-gray); /* #fff3e6;  Dégradé doux */
   padding: var(--section-padding); /* Espacement adaptatif */
   text-align: center; /* Alignement centré */
 }
 
-#linkedin h2, #linkedin h3{
+#linkedin h2 {
   margin-bottom: 1rem; /* Espacement en bas */
   font-size: var(--font-medium); /* Taille de police adaptative */
-  color: var(--medical-gray); /* Couleur du titre */
+  color: var(--medical-blue); /* Couleur du titre */
 }
 
 #linkedin h3{
