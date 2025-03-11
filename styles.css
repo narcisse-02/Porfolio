@@ -255,7 +255,7 @@ nav {
 .about-icon,
 .timeline-icon,
 .interest-icon {
-  background: var(--medical-blue); /* Couleur de fond */
+  background: #ffffff; /* Couleur de fond */
   color: var(--text-light); /* Couleur de l'icône */
   width: clamp(40px, 6vw, 50px); /* Taille adaptative */
   height: clamp(40px, 6vw, 50px);
