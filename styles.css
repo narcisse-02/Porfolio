@@ -315,12 +315,12 @@ nav {
    ========================================================================== */
 
 /* Grille pour les compétences et projets */
-.projects-grid,
-.skills-grid {
+.skills-grid,
+.projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colonnes adaptatives */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuster colonnes automatiquement */
   gap: clamp(1rem, 1.5vw, 1.5rem); /* Espace entre les éléments */
-  margin-top: clamp(0.5rem, 1vw, 1rem); /* Espacement en haut */
+  margin-top: clamp(1rem, 2vw, 2rem); /* Espacement en haut */
 }
 
 .project,
@@ -352,6 +352,8 @@ nav {
   margin-bottom: 1rem; /* Espacement en bas */
   font-size: var(--font-small); /* Taille de police adaptative */
   color: var(--medical-gray); /* Couleur du titre */
+  border-left: 5px solid #3498db;
+  padding-left: 10px;
 }
 
 #skills-grid #skill p,
@@ -530,6 +532,7 @@ footer p {
 }
 
 /* Grille pour les publications LinkedIn */
+.skills-grid,
 .projects-grid,
 .linkedin-grid {
   display: grid;
@@ -778,6 +781,7 @@ footer p {
   }
 
   /* Grille Projects et LinkedIn en une colonne */
+  .skills-project,
   .projects-grid,
   .linkedin-grid {
     grid-template-columns: 1fr; /* Une seule colonne */

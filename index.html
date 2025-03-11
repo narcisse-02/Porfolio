@@ -195,35 +195,113 @@
 
 
     <!-- Section Compétences -->
-    <section id="skills" class="container">
-      <h2>Mes Compétences Techniques</h2>
-      <div class="skills-grid">
-        <div class="skill">
-          <h3>Programmation</h3>
-          <p>R (Rshiny), Python (Pandas, NumPy), Java, C++</p>
-        </div>
-        <div class="skill">
-          <h3>Bases de Données</h3>
-          <p>SQL, MySQL, PostgreSQL, Access, Excel</p>
-        </div>
-        <div class="skill">
-          <h3>Machine & Deep Learning</h3>
-          <p>TensorFlow, Keras, Scikit-Learn, nnet, rpart</p>
-        </div>
-        <div class="skill">
-          <h3>Outils BI & ETL</h3>
-          <p>PowerBI, Talend Open Studio</p>
-        </div>
-        <div class="skill">
-          <h3>Développement Web</h3>
-          <p>Django, HTML, CSS, JavaScript, Bootstrap</p>
-        </div>
-        <div class="skill">
-          <h3>Autres Outils</h3>
-          <p>Git, GitHub, LaTeX, Google Suite</p>
-        </div>
-      </div>
-    </section>
+    <!-- Section Compétences -->
+<section id="skills" class="container">
+  <h2>Mes Compétences</h2>
+  <div class="skills-grid">
+
+    <!-- Programmation -->
+    <div class="skill">
+      <h3>Programmation</h3>
+      <ul>
+        <li>
+          <p><strong>Connaissances : </strong>Algorithmique, Optimisation, Programmation (fonctionnelle, procédurale, orientée objet, concurrente)</p>
+        </li>
+        <li>
+          <p><strong>Langages : </strong>Python (Pandas, NumPy), R (RShiny), Java, C++</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Bases de Données -->
+    <div class="skill">
+      <h3>Bases de Données</h3>
+      <ul>
+        <li>
+          <p><strong>Langages & Technologies : </strong>SQL, MySQL, PostgreSQL, Access</p>
+        </li>
+        <li>
+          <p><strong>Outils de traitement de données : </strong>Microsoft Excel</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Machine & Deep Learning -->
+    <div class="skill">
+      <h3>Machine & Deep Learning</h3>
+      <ul>
+        <li>
+          <p><strong>Bibliothèques Python : </strong>TensorFlow, Keras, Scikit-Learn</p>
+        </li>
+        <li>
+          <p><strong>Packages R : </strong>nnet, rpart</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Outils BI & ETL -->
+    <div class="skill">
+      <h3>Outils BI & ETL</h3>
+      <p>Power BI, Talend Open Studio</p>
+    </div>
+
+    <!-- Développement Web -->
+    <div class="skill">
+      <h3>Développement Web</h3>
+      <p>Django, HTML, CSS, JavaScript, Bootstrap</p>
+    </div>
+
+    <!-- Autres Outils -->
+    <div class="skill">
+      <h3>Autres Outils</h3>
+      <p>PyQt5, Qt, Git, GitHub, LaTeX, Google Suite</p>
+    </div>
+
+  </div>
+</section>
+
+
+    <style>
+      /* Grille des compétences */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+    
+      /* Bloc individuel d’une compétence */
+      .skill {
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      /* Style des listes dans Programmation */
+      .skill ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin: 0;
+      }
+    
+      .skill ul li {
+        margin-bottom: 10px;
+      }
+    
+      .skill ul li p {
+        margin: 0;
+        line-height: 1.5;
+      }
+    
+      .skill ul li strong {
+        color: #34495e;
+      }
+    
+      /* Style des paragraphes simples (autres compétences) */
+      .skill p {
+        line-height: 1.6;
+      }
+    </style>
+    
 
     <!-- Section Projets -->
     <section id="projects" class="container">
