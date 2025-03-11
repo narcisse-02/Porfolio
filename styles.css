@@ -540,7 +540,7 @@ footer p {
 
 /* Publication LinkedIn */
 .linkedin-post {
-  background: var(--text-light); /* Fond clair */
+  background: #e6f7ff; /* Fond clair */
   padding: clamp(1rem, 1.5vw, 1.5rem); /* Espacement interne */
   border-radius: var(--card); /* Coins non arrondis */
   box-shadow: var(--shadow); /* Ombre légère */
