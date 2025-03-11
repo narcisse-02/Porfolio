@@ -361,6 +361,9 @@ nav {
   font-size: var(--font-small); /* Taille de police adaptative */
 }
 
+.skill ul li p strong{
+  color: var(--medical-gray);
+}
 /* ==========================================================================
    7. FORMULAIRE DE CONTACT
    ========================================================================== */
