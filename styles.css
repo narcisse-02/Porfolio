@@ -415,7 +415,7 @@ form button:hover {
 
 #contact h2 {
   text-align: center;
-  color: var(--medical-blue);
+  color: var(--medical-gray);
   font-size: var(--font-medium);
 }
 
@@ -468,7 +468,7 @@ footer p {
 #cv h2 {
   margin-bottom: 1rem; /* Espacement en bas */
   font-size: var(--font-medium); /* Taille de police adaptative */
-  color: var(--medical-blue); /* Couleur du titre */
+  color: var(--medical-gray); /* Couleur du titre */
 }
 
 #cv p {
@@ -512,7 +512,7 @@ footer p {
 
 /* Section LinkedIn */
 #linkedin {
-  background:#1E3A8A; /* couleur de fond */
+  background: #ffffff; /* couleur de fond */
   padding: var(--section-padding); /* Espacement adaptatif */
   text-align: center; /* Alignement centré */
 }
@@ -520,13 +520,13 @@ footer p {
 #linkedin h2 {
   margin-bottom: 1rem; /* Espacement en bas */
   font-size: var(--font-medium); /* Taille de police adaptative */
-  color: var(--light-bg); /* Couleur du titre */
+  color: var(--medical-gray); /* Couleur du titre */
 }
 
 #linkedin h3{
   margin-bottom: 1rem; /* Espacement en bas */
   font-size: var(--font-small); /* Taille de police adaptative */
-  color: var(--medical-blue); /* Couleur du titre */
+  color: var(--medical-gray); /* Couleur du titre */
 }
 
 /* Grille pour les publications LinkedIn */
