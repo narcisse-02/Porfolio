@@ -742,6 +742,12 @@ footer p {
   background-color: var(--light-bg);
 }
 
+.dark-mode .project h3, 
+.dark-mode .skill h3 {
+  border-left: 5px solid #ffffff;
+  padding-left: 10px;
+}
+
 /* ==========================================================================
    12. RESPONSIVE DESIGN
    ========================================================================== */
