@@ -343,7 +343,7 @@ nav {
 #skills h2 {
   border-bottom: 2px solid var(--medical-gray); /* Ligne horizontale */
   font-size: var(--font-medium); /* Taille de police adaptative */
-  color: var(--medical-gray); /* Couleur du titre */
+  color: var(--medical-gray);  /* Couleur du titre */
   padding-bottom: 0.5rem; /* Espacement entre le texte et la ligne */
 }
 
@@ -356,14 +356,12 @@ nav {
   padding-left: 10px;
 }
 
+#skill ul li p,
 #skills-grid #skill p,
 #projects-grid #project p {
   font-size: var(--font-small); /* Taille de police adaptative */
 }
 
-.skill ul li p strong{
-  color: var(--medical-gray);
-}
 /* ==========================================================================
    7. FORMULAIRE DE CONTACT
    ========================================================================== */
@@ -478,6 +476,7 @@ footer p {
 
 #cv p {
   margin-bottom: 1rem; /* Espacement en bas */
+  font-size: var(--font-small); /* Taille de police adaptative */
 }
 
 /* Bouton de téléchargement du CV */
@@ -528,7 +527,7 @@ footer p {
   color: var(--medical-gray); /* Couleur du titre */
 }
 
-#linkedin h3{
+#linkedin .linkedin-grid .linkedin-post h3{
   margin-bottom: 1rem; /* Espacement en bas */
   font-size: var(--font-small); /* Taille de police adaptative */
   color: var(--medical-gray); /* Couleur du titre */
@@ -561,7 +560,7 @@ footer p {
 
 /* Titre de la publication */
 /* Contenu de la publication */
-.linkedin-post p {
+#linkedin .linkedin-grid .linkedin-post p {
   color: var(--text-white); /* Texte blanc */
   margin-bottom: 1rem; /* Espacement en bas */
   font-size: var(--font-small); /* Taille de police adaptative */
