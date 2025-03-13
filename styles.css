@@ -33,7 +33,7 @@
   --card-radius: 3.5px; /* Rayon des coins pour les cartes */
 
   --section-padding: 1rem;
-  --font-medium: 1.3rem;
+  --font-medium: 1.2rem;
   --font-small: 1rem;
   --medical-gray: #4a4a4a;
   --medical-blue: #0077b5;
@@ -557,14 +557,14 @@ form button:hover {
 
 .social-links a {
   font-size: 2rem;
-  margin: 0.25rem;
+  margin: 0.2rem;
   transition: transform var(--transition);
   text-decoration: none;
   display: inline-block; /* Assure un comportement cohérent */
   background-color: var(--light-bg);
   border-radius: 50%; /* Forme circulaire pour les icônes */
-  width: 3rem; /* Taille fixe pour les icônes */
-  height: 3rem; /* Taille fixe pour les icônes */
+  width: 2.5rem; /* Taille fixe pour les icônes */
+  height: 2.5rem; /* Taille fixe pour les icônes */
   display: flex;
   align-items: center;
   justify-content: center;
