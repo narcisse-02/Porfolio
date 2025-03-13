@@ -412,9 +412,6 @@ nav {
   color: var(--medical-gray);
 }
 
-/* Grille pour les publications (réutilisable pour d'autres sections) */
-.skills-grid,
-.projects-grid,
 .linkedin-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
