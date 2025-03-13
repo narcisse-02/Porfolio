@@ -30,7 +30,18 @@
 
   /* Espacements adaptatifs */
   --section-padding: clamp(2rem, 4vw, 4rem);
-  --card-radius: 10px; /* Rayon des coins pour les cartes */
+  --card-radius: 3.5px; /* Rayon des coins pour les cartes */
+
+  --section-padding: 1rem;
+  --font-medium: 1.3rem;
+  --font-small: 1rem;
+  --medical-gray: #4a4a4a;
+  --medical-blue: #0077b5;
+  --medical-green: #00bfa5;
+  --text-light: #ffffff;
+  --text-white: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: 0.3s ease-in-out;
 }
 
 /* Styles de base pour le corps de la page */
@@ -84,7 +95,7 @@ body {
 
 /* Style global pour l'en-tête */
 header {
-  background-color: #1E3A8A; /* Bleu uniforme pour l'en-tête */
+  background-color: var(--medical-green); /* Bleu uniforme pour l'en-tête */
   color: var(--text-light); /* Texte clair */
   text-align: center;
   padding: var(--section-padding) 0; /* Espacement vertical adaptatif */
@@ -111,7 +122,7 @@ header {
 
 /* Effet d'agrandissement au survol */
 .profile-picture img:hover {
-  transform: scale(1.1);
+  transform: scale(1.12345);
 }
 
 /* Informations personnelles */
@@ -273,7 +284,7 @@ nav {
 .interest-content {
   background: var(--text-light); /* Fond clair */
   padding: clamp(1rem, 1.5vw, 1.5rem); /* Espacement interne */
-  border-radius: var(--card); /* Coins non arrondis */
+  border-radius: var(--card-radius); /* Coins non arrondis */
   box-shadow: var(--shadow); /* Ombre légère */
   flex: 1; /* Remplit l'espace disponible */
   transition: transform var(--transition), box-shadow var(--transition); /* Transition fluide */
@@ -290,7 +301,7 @@ nav {
 #about h3, #education h3, #experience h3, #interests h3{
   font-size: var(--font-small); /* Taille de police adaptative */
   margin-bottom: 1rem; /* Espacement en bas */
-  color: var(--medical-gray); /* Couleur du titre */
+  color: var(--medical-green); /* Couleur du titre */
 }
 
 #about h2, 
@@ -327,9 +338,9 @@ nav {
 .skill {
   background: var(--text-light); /* Fond clair */
   padding: clamp(1rem, 1.5vw, 1.5rem); /* Espacement interne */
-  border-radius: var(--card); /* Coins npn arrondis */
+  border-radius: var(--card-radius); /* Coins npn arrondis */
   box-shadow: var(--shadow); /* Ombre légère */
-  transition: transform var(--transition), box-shadow var(--transition); /* Transition fluide */
+  transition: transform 0.3s ease; /* Transition fluide */
 }
 
 /* Effet au survol des compétences et projets */
@@ -351,8 +362,8 @@ nav {
 .skill h3 {
   margin-bottom: 1rem; /* Espacement en bas */
   font-size: var(--font-small); /* Taille de police adaptative */
-  color: var(--medical-gray); /* Couleur du titre */
-  border-left: 5px solid #3498db;
+  color: var(--medical-green); /* Couleur du titre */
+  border-left: 5px solid var(--medical-gray);
   padding-left: 10px;
 }
 
@@ -362,103 +373,95 @@ nav {
   font-size: var(--font-small); /* Taille de police adaptative */
 }
 
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.skill ul {
+  list-style-type: disc;
+  padding-left: 30px;
+  margin: 0;
+}
+
+.skill ul li {
+  margin-bottom: 10px;
+}
+
 /* ==========================================================================
-   7. FORMULAIRE DE CONTACT
+   7. SECTION LINKEDIN
    ========================================================================== */
 
-/* Champs de saisie et zone de texte */
-form input,
-form textarea {
-  width: 100%; /* Remplit la largeur disponible */
-  padding: clamp(0.5rem, 1vw, 1rem); /* Espacement interne adaptatif */
-  margin-bottom: clamp(0.5rem, 1vw, 1rem); /* Espacement en bas */
-  border: 1px solid #ccc; /* Bordure légère */
-  border-radius: var(--card-radius); /* Coins arrondis */
-  transition: border-color var(--transition); /* Transition fluide */
-}
-
-/* Effet au focus des champs */
-form input:focus,
-form textarea:focus {
-  border-color: var(--medical-blue); /* Changement de couleur */
-  outline: none; /* Supprime le contour par défaut */
-}
-
-/* Boutons du formulaire */
-.cv-button,
-form button {
-  background: var(--medical-blue); /* Couleur de fond */
-  color: var(--text-light); /* Texte clair */
-  padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem); /* Espacement interne adaptatif */
-  border: none; /* Supprime la bordure */
-  border-radius: var(--card-radius); /* Coins arrondis */
-  cursor: pointer; /* Curseur de pointeur */
-  transition: background-color var(--transition); /* Transition fluide */
-}
-
-/* Effet au survol des boutons */
-form button:hover {
-  background-color: var(--medical-green); /* Changement de couleur */
-}
-
-.social-links a {
-  font-size: 2rem;              /* Taille des icônes */
-  margin: 0.25rem;               /* Espacement horizontal */
-  transition: transform 0.3s;  /* Effet au survol */
-  text-decoration: none;
-  background-color: var(--light-bg);
-}
-
-.social-links a:hover {
-  transform: scale(1.2);       /* Zoom au survol */
-  background-color: var(--light-bg);
-}
-
-/* Couleurs spécifiques */
-
-#contact h2 {
+/* Section LinkedIn */
+#linkedin {
+  background: #ffffff;
+  padding: var(--section-padding);
   text-align: center;
-  color: var(--medical-gray);
+}
+
+/* Titres dans la section LinkedIn */
+#linkedin h2 {
+  margin-bottom: 1rem;
   font-size: var(--font-medium);
+  color: var(--medical-gray);
 }
 
-/* Personalisation de couleur des icons des résaux sociaux */
-.social-links .linkedin {
-  color: #0077b5; /* Bleu LinkedIn */
+.linkedin-post h3 {
+  margin-bottom: 1rem;
+  font-size: var(--font-small);
+  color: var(--medical-gray);
 }
 
-.social-links .github {
-  color: #171515; /* Noir GitHub */
+/* Grille pour les publications (réutilisable pour d'autres sections) */
+.skills-grid,
+.projects-grid,
+.linkedin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 1.5vw, 1.5rem);
+  margin-top: clamp(1rem, 2vw, 2rem);
 }
 
-.social-links .whatsapp {
-  color: #25D366; /* Vert WhatsApp */
+/* Publication LinkedIn */
+.linkedin-post {
+  background: #e6f7ff;
+  padding: clamp(1rem, 1.5vw, 1.5rem);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.social-links .facebook {
-  color: #1877F2; /* Bleu Facebook */
+.linkedin-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Contenu de la publication */
+.linkedin-post p {
+  color: var(--text-black);
+  margin-bottom: 1rem;
+  font-size: var(--font-small);
+}
+
+/* Lien vers la publication */
+.post-link {
+  display: inline-block;
+  background: var(--medical-green);
+  color: var(--text-light);
+  padding: clamp(0.5rem, 0.8vw, 0.8rem) clamp(1rem, 1.5vw, 1.5rem);
+  border-radius: var(--card-radius);
+  text-decoration: none;
+  font-size: var(--font-small);
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.post-link:hover {
+  background-color: var(--medical-gray);
+  transform: scale(1.05);
+}
 
 /* ==========================================================================
-   8. FOOTER
-   ========================================================================== */
-
-/* Pied de page */
-footer {
-  text-align: center; /* Alignement centré */
-  padding: var(--section-padding); /* Espacement adaptatif */
-  background: #1E3A8A; /* Arrière-plan gris médical */
-  color: var(--text-light); /* Texte clair */
-  transition: background-color var(--transition), color var(--transition); /* Transition fluide */
-}
-
-footer p {
-  font-size: var(--font-small); /* Taille de police adaptative */
-}
-
-/* ==========================================================================
-   9. SECTION CV
+   8. SECTION CV
    ========================================================================== */
 
 /* Section CV */
@@ -484,7 +487,7 @@ footer p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--medical-blue); /* Couleur de fond */
+  background: var(--medical-green); /* Couleur de fond */
   color: var(--text-light); /* Texte clair */
   padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem); /* Espacement interne adaptatif */
   border-radius: var(--card-radius); /* Coins arrondis */
@@ -506,86 +509,111 @@ footer p {
 
 /* Effet au survol du bouton CV */
 .cv-button:hover {
-  background-color: var(--medical-green); /* Changement de couleur */
+  background-color: var(--medical-gray); /* Changement de couleur */
   transform: scale(1.05); /* Légère augmentation de taille */
 }
 
 /* ==========================================================================
-   10. SECTION LINKEDIN
+   10. SECTION FORMULAIRES
    ========================================================================== */
 
-/* Section LinkedIn */
-#linkedin {
-  background: #ffffff; /* couleur de fond */
-  padding: var(--section-padding); /* Espacement adaptatif */
-  text-align: center; /* Alignement centré */
+form input,
+form textarea {
+  width: 100%;
+  padding: var(--input-padding);
+  margin-bottom: var(--input-padding);
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  transition: border-color var(--transition);
 }
 
-#linkedin h2 {
-  margin-bottom: 1rem; /* Espacement en bas */
-  font-size: var(--font-medium); /* Taille de police adaptative */
-  color: var(--medical-gray); /* Couleur du titre */
+form input:focus,
+form textarea:focus {
+  border-color: var(--medical-blue);
+  outline: none;
 }
 
-#linkedin .linkedin-grid .linkedin-post h3{
-  margin-bottom: 1rem; /* Espacement en bas */
-  font-size: var(--font-small); /* Taille de police adaptative */
-  color: var(--medical-gray); /* Couleur du titre */
+form button {
+  background: var(--medical-green);
+  color: var(--text-light);
+  padding: var(--button-padding);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
 }
 
-/* Grille pour les publications LinkedIn */
-.skills-grid,
-.projects-grid,
-.linkedin-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-  gap: clamp(1rem, 1.5vw, 1.5rem); /* Espace entre les éléments */
-  margin-top: clamp(1rem, 2vw, 2rem); /* Espacement en haut */
-}
-
-/* Publication LinkedIn */
-.linkedin-post {
-  background: #e6f7ff; /* Fond clair */
-  padding: clamp(1rem, 1.5vw, 1.5rem); /* Espacement interne */
-  border-radius: var(--card); /* Coins non arrondis */
-  box-shadow: var(--shadow); /* Ombre légère */
-  transition: transform var(--transition), box-shadow var(--transition); /* Transition fluide */
-}
-
-/* Effet au survol des publications */
-.linkedin-post:hover {
-  transform: translateY(-5px); /* Légère translation vers le haut */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
-}
-
-/* Titre de la publication */
-/* Contenu de la publication */
-#linkedin .linkedin-grid .linkedin-post p {
-  color: var(--text-white); /* Texte blanc */
-  margin-bottom: 1rem; /* Espacement en bas */
-  font-size: var(--font-small); /* Taille de police adaptative */
-}
-
-/* Lien vers la publication */
-.post-link {
-  display: inline-block;
-  background: var(--medical-blue); /* Couleur de fond */
-  color: var(--text-light); /* Texte clair */
-  padding: clamp(0.5rem, 0.8vw, 0.8rem) clamp(1rem, 1.5vw, 1.5rem); /* Espacement interne adaptatif */
-  border-radius: var(--card-radius); /* Coins arrondis */
-  text-decoration: none; /* Supprime le soulignement */
-  font-size: var(--font-small); /* Taille de police adaptative */
-  transition: background-color var(--transition), transform var(--transition); /* Transition fluide */
-}
-
-/* Effet au survol du lien */
-.post-link:hover {
-  background-color: var(--medical-green); /* Changement de couleur */
-  transform: scale(1.05); /* Légère augmentation de taille */
+form button:hover {
+  background-color: var(--light-bg);
+  transform: scale(1.05);
 }
 
 /* ==========================================================================
-   11. MODE SOMBRE
+   11. SECTION CONTACTS
+   ========================================================================== */
+
+#contact h2 {
+  text-align: center;
+  color: var(--medical-gray);
+  font-size: var(--font-medium);
+}
+
+.social-links a {
+  font-size: 2rem;
+  margin: 0.25rem;
+  transition: transform var(--transition);
+  text-decoration: none;
+  display: inline-block; /* Assure un comportement cohérent */
+  background-color: var(--light-bg);
+  border-radius: 50%; /* Forme circulaire pour les icônes */
+  width: 3rem; /* Taille fixe pour les icônes */
+  height: 3rem; /* Taille fixe pour les icônes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+  background-color: var(--light-bg);
+}
+
+/* Couleurs spécifiques pour les icônes des réseaux sociaux */
+.social-links .linkedin {
+  color: #0077b5;
+}
+
+.social-links .github {
+  color: #171515;
+}
+
+.social-links .whatsapp {
+  color: #25d366;
+}
+
+.social-links .facebook {
+  color: #1877f2;
+}
+
+/* ==========================================================================
+   12. FOOTER
+   ========================================================================== */
+
+/* Pied de page */
+footer {
+  text-align: center; /* Alignement centré */
+  padding: var(--section-padding); /* Espacement adaptatif */
+  background: var(--medical-green); /* Arrière-plan gris médical */
+  color: var(--text-light); /* Texte clair */
+  transition: background-color var(--transition), color var(--transition); /* Transition fluide */
+}
+
+footer p {
+  font-size: var(--font-small); /* Taille de police adaptative */
+}
+
+/* ==========================================================================
+   13. MODE SOMBRE
    ========================================================================== */
 
 /* Modifications pour le mode sombre */
@@ -673,8 +701,28 @@ footer p {
   color: var(--text-light); /* Texte clair */
 }
 
-.dark-mode #cv h2 {
-  color: var(--medical-gray); /* Titre vert */
+.dark-mode #about h2, 
+.dark-mode #education h2, 
+.dark-mode #experience h2, 
+.dark-mode #interests h2,
+.dark-mode #projects h2, 
+.dark-mode  #skills h2,
+.dark-mode #linkedin h2,
+.dark-mode #cv h2, 
+.dark-mode #contact h2{
+  color: var(--light-bg); /* Titre vert */
+}
+
+.dark-mode #about h3, 
+.dark-mode #education h3, 
+.dark-mode #experience h3, 
+.dark-mode #interests h3,
+.dark-mode #projects h3, 
+.dark-mode  #skills h3,
+.dark-mode #linkedin h3,
+.dark-mode #cv h3, 
+.dark-mode #contact h3{
+  color: var(--light-bg); /* Titre vert */
 }
 
 .dark-mode .cv-button {
@@ -691,10 +739,6 @@ footer p {
   color: var(--text-light); /* Texte clair */
 }
 
-.dark-mode #linkedin h2 {
-  color: var(--medical-gray); /* Titre vert */
-}
-
 .dark-mode .linkedin-post h3 {
   color: var(--medical-gray); /* Titre vert */
 }
@@ -709,7 +753,7 @@ footer p {
 }
 
 .dark-mode #contact h2 {
-  color: var(--medical-gray);
+  color: var(--light-bg);
   font-size: var(--font-medium);
 }
 
@@ -749,7 +793,7 @@ footer p {
 }
 
 /* ==========================================================================
-   12. RESPONSIVE DESIGN
+   14. RESPONSIVE DESIGN
    ========================================================================== */
 
 /* Styles pour les écrans de petite taille */
