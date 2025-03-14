@@ -841,8 +841,9 @@ footer p {
     position: absolute; /* Positionnement absolu */
     top: 60px; /* Distance depuis le haut */
     right: 0; /* Alignement à droite */
-    width: 100%; /* Remplit la largeur */
-    z-index: 1000; /* S'assure qu'il reste au-dessus */
+    width: 80%; /* Remplit la largeur */
+    /* position: relative; */
+    z-index: 1000;; /* S'assure qu'il reste au-dessus */
   }
 
   #nav-links.active {
