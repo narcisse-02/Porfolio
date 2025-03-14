@@ -95,8 +95,8 @@ body {
 
 /* Style global pour l'en-tête */
 header {
-  background-color: var(--medical-green); /* Bleu uniforme pour l'en-tête */
-  color: var(--text-light); /* Texte clair */
+  background-color: #ffffff; /* Bleu uniforme pour l'en-tête */
+  color: var(--medical-gray); /* Texte clair */
   text-align: center;
   padding: var(--section-padding) 0; /* Espacement vertical adaptatif */
 }
@@ -171,7 +171,7 @@ header {
 
 /* Barre de navigation */
 nav {
-  background: var(--medical-gray); /* Arrière-plan gris médical */
+  background: var(--medical-green); /* Arrière-plan gris médical */
   color: var(--text-light); /* Texte clair */
   padding: clamp(0.5rem, 1vw, 1rem) 0; /* Espacement vertical adaptatif */
 }
@@ -212,8 +212,8 @@ nav {
 
 /* Effet au survol des liens */
 #nav-links li a:hover {
-  background-color: var(--medical-green); /* Changement de couleur */
-  color: var(--dark-bg); /* Texte sombre */
+  background-color: var(--medical-gray); /* Changement de couleur */
+  color: var(--light-bg); /* Texte sombre */
 }
 
 /* ==========================================================================
@@ -313,6 +313,17 @@ nav {
   border-bottom: 2px solid var(--medical-gray); /* Ligne horizontale */
   color: var(--medical-gray); /* Couleur du titre */
   padding-bottom: 0.5rem; /* Espacement entre le texte et la ligne */
+}
+#about h3, 
+#education h3, 
+#experience h3, 
+#interests h3,
+#projects h3, 
+#skills h3,
+#linkedin h3,
+#cv h3, 
+#contact h3{
+  color: var(--medical-gray); /* Titre vert */
 }
 
 #about-content p,
@@ -632,6 +643,10 @@ footer p {
   background: #1a1a1a; /* Fond noir foncé */
 }
 
+.dark-mode #nav-links li a:hover {
+  background-color: var(--medical-green); /* Changement de couleur */
+}
+
 /* Icônes des réseaux sociaux en mode sombre */
 .dark-mode .social-links a {
   background: var(--light-bg); /* Fond sombre */
@@ -707,7 +722,7 @@ footer p {
 .dark-mode #linkedin h2,
 .dark-mode #cv h2, 
 .dark-mode #contact h2{
-  color: var(--light-bg); /* Titre vert */
+  color: var(--light-bg); /* Titre blanc */
 }
 
 .dark-mode #about h3, 
@@ -720,6 +735,17 @@ footer p {
 .dark-mode #cv h3, 
 .dark-mode #contact h3{
   color: var(--light-bg); /* Titre vert */
+}
+
+.dark-mode #projects p, 
+.dark-mode  #skills p,
+.dark-mode #linkedin p,
+.dark-mode #cv p, 
+.dark-mode #contact p,
+.dark-mode .about-content p,
+.dark-mode .timeline-content p,
+.dark-mode .interest-content p {
+  color: #c4b8b8; /* Titre gris */
 }
 
 .dark-mode .cv-button {
@@ -795,6 +821,13 @@ footer p {
 
 /* Styles pour les écrans de petite taille */
 @media (max-width: 768px) {
+
+  :root {
+    --section-padding: 1rem;
+    --font-medium: 1.2rem;
+    --font-small: 1rem;
+  }
+
   #menu-toggle {
     display: block; /* Affiche le bouton de menu */
   }
@@ -803,7 +836,7 @@ footer p {
     display: none; /* Masque les liens par défaut */
     flex-direction: column; /* Alignement vertical */
     gap: clamp(0.5rem, 1vw, 1rem); /* Espace entre les liens */
-    background: var(--medical-gray); /* Fond gris foncé */
+    background: var(--medical-green); /* Fond gris foncé */
     padding: clamp(0.5rem, 1vw, 1rem); /* Espacement interne */
     position: absolute; /* Positionnement absolu */
     top: 60px; /* Distance depuis le haut */
