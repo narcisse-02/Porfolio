@@ -839,15 +839,15 @@ footer p {
     background: var(--medical-green);
     padding: clamp(0.5rem, 1vw, 1rem);
     position: absolute;
-    top: 60px;
-    right: 0;
+    top: 0px;
+    left: 0;
     width: 25vw; /* 25% de la largeur de la fenêtre visible */
     max-width: 350px; /* Optionnel : limite la largeur max sur grand écran */
     min-width: 200px; /* Optionnel : évite qu’il soit trop étroit sur mobile */
     height: auto;
     z-index: 9999; /* Toujours au-dessus */
     box-shadow: -4px 0 10px rgba(0,0,0,0.2); /* Pour le style */
-    border-left: 2px solid #ccc; /* Optionnel : petit effet de séparation */
+    border-right: 2px solid #ccc; /* Optionnel : petit effet de séparation */
   }  
 
   #nav-links.active {
