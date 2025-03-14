@@ -833,18 +833,22 @@ footer p {
   }
 
   #nav-links {
-    display: none; /* Masque les liens par défaut */
-    flex-direction: column; /* Alignement vertical */
-    gap: clamp(0.5rem, 1vw, 1rem); /* Espace entre les liens */
-    background: var(--medical-green); /* Fond gris foncé */
-    padding: clamp(0.5rem, 1vw, 1rem); /* Espacement interne */
-    position: absolute; /* Positionnement absolu */
-    top: 60px; /* Distance depuis le haut */
-    right: 0; /* Alignement à droite */
-    width: 25%; /* Remplit la largeur */
-    /* position: relative; */
-    z-index: 1000;; /* S'assure qu'il reste au-dessus */
-  }
+    display: none; /* Masqué par défaut */
+    flex-direction: column;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    background: var(--medical-green);
+    padding: clamp(0.5rem, 1vw, 1rem);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 25vw; /* 25% de la largeur de la fenêtre visible */
+    max-width: 350px; /* Optionnel : limite la largeur max sur grand écran */
+    min-width: 200px; /* Optionnel : évite qu’il soit trop étroit sur mobile */
+    height: auto;
+    z-index: 9999; /* Toujours au-dessus */
+    box-shadow: -4px 0 10px rgba(0,0,0,0.2); /* Pour le style */
+    border-left: 2px solid #ccc; /* Optionnel : petit effet de séparation */
+  }  
 
   #nav-links.active {
     display: flex; /* Affiche les liens lorsque le menu est actif */
