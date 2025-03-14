@@ -839,15 +839,17 @@ footer p {
     background: var(--medical-green);
     padding: clamp(0.5rem, 1vw, 1rem);
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 0;
-    width: 25vw; /* 25% de la largeur de la fenêtre visible */
-    max-width: 350px; /* Optionnel : limite la largeur max sur grand écran */
-    min-width: 200px; /* Optionnel : évite qu’il soit trop étroit sur mobile */
+    width: 25vw;
+    max-width: 350px;
+    min-width: 200px;
     height: auto;
-    z-index: 9999; /* Toujours au-dessus */
-    box-shadow: -4px 0 10px rgba(0,0,0,0.2); /* Pour le style */
-    border-right: 2px solid #ccc; /* Optionnel : petit effet de séparation */
+    z-index: 9999;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    border-right: 2px solid #ccc;
+    border-top-left-radius: 0; /* Aucun arrondi si tu veux un angle net */
+    border-bottom-right-radius: 8px; /* optionnel pour du style */
   }  
 
   #nav-links.active {
