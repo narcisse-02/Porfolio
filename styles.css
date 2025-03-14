@@ -95,7 +95,7 @@ body {
 
 /* Style global pour l'en-tête */
 header {
-  background-color: #ffffff; /* Bleu uniforme pour l'en-tête */
+  background-color: #e6f7ff; /* Bleu uniforme pour l'en-tête */
   color: var(--medical-gray); /* Texte clair */
   text-align: center;
   padding: var(--section-padding) 0; /* Espacement vertical adaptatif */
